@@ -1,10 +1,14 @@
 import * as React from "react"
+import { Helmet } from 'react-helmet'
 
 function EpisodePage({ pageContext }) {
   const { episode } = pageContext;
   return (
     <div>
-      {episode.id} <br />
+      <Helmet title={episode.title}>
+        <meta name="keywords" content={episode.keywords}></meta>
+        <meta name="description" content={episode.description}></meta>
+      </Helmet>
       {episode.title}<br />
       {episode.description}<br />
       {episode.keywords}<br />

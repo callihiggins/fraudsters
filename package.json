@@ -15,8 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.8.2",
+    "@emotion/css": "^11.9.0",
+    "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "gatsby": "^4.11.1",
     "gatsby-node-helpers": "^1.2.1",
     "gatsby-plugin-emotion": "^7.11.0",
