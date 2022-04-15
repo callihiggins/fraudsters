@@ -8,3 +8,7 @@
   font-family: 'CCUpUpAndAway';
   src: url("../fonts/CCUpUpAndAway.woff2");
 }
+
+body {
+  font-family: 'itc-avant-garde-gothic-pro', sans-serif;
+}

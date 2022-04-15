@@ -4,16 +4,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSpinner, faPlus, faMinus, faEnvelope, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-import Home from '../components/Home';
+import Episodes from '../components/Episodes';
 import "./base.css"
 
 library.add(fab, faSpinner, faPlus, faMinus, faEnvelope, faTimes);
 
 
-const IndexPage = () => {
+const EpisodesPage = () => {
   return (
-    <Home />
+    <Episodes />
   )
 }
 
-export default IndexPage
+export default EpisodesPage;

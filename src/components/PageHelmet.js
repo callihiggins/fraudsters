@@ -1,18 +1,17 @@
 import * as React from "react"
 import { Helmet } from 'react-helmet';
-import SITE_IMAGE from '../../images/icon.png'
+import SITE_IMAGE from '../images/icon.png'
 
 const PAGE_TITLE = 'Fraudsters: The True-Crime, Comedy Podcast';
 const PAGE_KEYWORDS = ['scam', 'true crime', 'podcast', 'last podcast network', 'seena ghaznavi', 'justin williams', 'comedy' ];
 const DESCRIPTION = 'Fraudsters is an all-you-can-eat buffet of liars, cheaters, and scammers. We cover every flavor of fraud you can imagine from fake psychic hotlines to corporations cookin’ the books. This podcast is a collaboration between Zerocool Media and the Last Podcast Network. Hosted by Seena Ghaznavi and Justin Williams. Produced by Hazel Bryan. Theme music by Simon TaufiQue. Find us on Instagram or Twitter @FraudstersLPN Email us with your thoughts at Fraudsterslpn@gmail.com';
 const POD_URL = 'https://fraudsters.fm';
 
-const HomePageHelmet = () => {
+const PageHelmet = () => {
 
   return (
     <>
       <Helmet title={PAGE_TITLE}>
-        <link rel="stylesheet" href="https://use.typekit.net/fqf2qwn.css" />
         <meta name="keywords" content={PAGE_KEYWORDS}></meta>
         <meta name="description" content={DESCRIPTION}></meta>
         <link rel="shortcut icon" type="image/x-icon" href={SITE_IMAGE}/>
@@ -42,4 +41,4 @@ const HomePageHelmet = () => {
   )
 }
 
-export default HomePageHelmet;
+export default PageHelmet;

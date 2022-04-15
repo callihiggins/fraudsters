@@ -1,6 +1,9 @@
 import { css } from '@emotion/css';
 import { default as theme } from '../../theme';
 
+const duration = '.5s';
+const distance = '5px';
+const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
 export const mainContainerClass = css`
   background-color: ${theme.colors.yellow};
@@ -101,7 +104,7 @@ export const playerClass = css`
   }
 `;
 
-export const mobileHeaderClass = css`
+export const headerClass = css`
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     display: flex;
     flex-direction: column;
@@ -117,6 +120,58 @@ export const mobileImageClass = css`
     padding: 20px 0;
     img {
       width: 80%;
+    }
+  }
+`;
+
+export const navClass = css`
+  width: 40%;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  display: flex;
+  font-family: ${theme.fonts.avantGarde}, sans-serif;
+  font-weight: 500;
+  justify-content: space-around;
+
+  a {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 2px;
+      background-color: #000;
+    }
+    &:before {
+      opacity: 0;
+      transform: translateY(- ${distance});
+      transition: transform 0s ${easeOutBack}, opacity 0s;
+    }
+    &:after {
+      opacity: 0;
+      transform: translateY($distance/2);
+      transition: transform ${duration} ${easeOutBack}, opacity ${duration};
+    }
+    &:hover {
+      &:before,
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      &:before {
+        transition: transform ${duration} ${easeOutBack}, opacity ${duration};
+      }
+      &:after {
+        transition: transform 0s ${duration} ${easeOutBack}, opacity 0s ${duration};
+      }
     }
   }
 `;

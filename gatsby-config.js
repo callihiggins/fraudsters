@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `new`,
@@ -15,8 +19,16 @@ module.exports = {
   {
     resolve: 'gatsby-source-simplecast',
     options: {
-      token: 'eyJhcGlfa2V5IjoiVlliZDh5MmNOMUljcm4xaGNKZUtBM0xFTGRURThnSFdrZE1PcUV4Y0hJYz0ifQ==',
-      podcastId: '3efcc19a-e279-40af-9726-47a519956c3f',
+      token: process.env.SIMPLECAST_TOKEN,
+      podcastId: process.env.SIMPLECAST_ID,
+    },
+  },
+  {
+    resolve: "gatsby-plugin-web-font-loader",
+    options: {
+      typekit: {
+        id: process.env.TYPEKIT_ID,
+      },
     },
   },
 ]
