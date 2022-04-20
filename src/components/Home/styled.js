@@ -23,12 +23,14 @@ export const titleClass = css`
   letter-spacing: 1.5px;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  padding: 20px 0 0 20px;
+  padding: 5px 0 0 20px;
+  z-index: 1000;
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
-    font-size: 50px;
-    text-align: center;
-    padding: 20px 0 0 0;
+    font-size: 30px;
+    color: ${theme.colors.yellow};
+    padding: 20px 0 0 20px;
+    width: 200px;
   }
 `;
 
@@ -86,11 +88,11 @@ export const subTitleClass = css`
 `;
 
 export const playerClass = css`
-  padding: 60px 0 0 20px;
+  padding: 40px 0 0 20px;
 
   iframe {
     width: 40%;
-    height: calc(100vh - ${theme.componentsHeight.footer} - 400px);
+    height: calc(100vh - ${theme.componentsHeight.footer} - 350px);
   }
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
@@ -127,12 +129,20 @@ export const mobileImageClass = css`
 export const navClass = css`
   width: 40%;
   position: absolute;
-  top: 40px;
+  top: 20px;
   right: 20px;
   display: flex;
   font-family: ${theme.fonts.avantGarde}, sans-serif;
   font-weight: 500;
   justify-content: space-around;
+
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    width: 30%;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    display: none;
+  }
 
   a {
     cursor: pointer;
@@ -173,5 +183,12 @@ export const navClass = css`
         transition: transform 0s ${duration} ${easeOutBack}, opacity 0s ${duration};
       }
     }
+  }
+`;
+
+export const hideDesktop = css`
+  display: none;
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    display: block;
   }
 `;

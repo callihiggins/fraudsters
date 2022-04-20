@@ -11,3 +11,9 @@ export const pageTitle = css`
   font-family: ${theme.fonts.upAway};
   margin: 10px 0;
 `;
+
+export const episodesContainerClass = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;

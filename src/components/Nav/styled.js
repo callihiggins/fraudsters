@@ -15,9 +15,12 @@ export const navContainer = css`
 `;
 
 export const logoContainer = css`
-  color: ${theme.colors.yellow};
-  font-size: 24px;
-  font-family: ${theme.fonts.upAway}
+  a {
+    color: ${theme.colors.yellow};
+    text-decoration: none;
+    font-size: 24px;
+    font-family: ${theme.fonts.upAway}
+  }
 `;
 
 export const linksContainer = css`
@@ -78,4 +81,17 @@ export const socialMediaIconsClass = css`
     a {
       margin: 0 !important;
     }
+`;
+
+export const hideMobile = css`
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    display: none;
+  }
+`;
+
+export const hideDesktop = css`
+  display: none;
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    display: block;
+  }
 `;

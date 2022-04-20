@@ -1,0 +1,95 @@
+$green: #1a3324;
+$mustard: #ffde40;
+$hotpink: #CE446F;
+$cream: #FFF0D7;
+$navy : #004564;
+$highlight: #8DD1C3;;
+
+.logo {
+  display: block;
+  width: 100px;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 0;
+  cursor: pointer;
+
+  img {
+    width: 75px;
+  }
+}
+
+.hideMobile {
+  display: none;
+}
+
+.bm-burger-button {
+  width: 45px;
+  display: inline-block;
+  right: 20px;
+  position: fixed;
+  top: 10px;
+}
+
+.bm-burger-bars {
+  background: $cream;
+  height: 3px;
+}
+
+.bm-burger-bars-hover {
+  background: #000;
+}
+
+.bm-menu {
+  background: #000;
+  color: #FFDC04;
+  padding: 20px;
+}
+
+.bm-menu-wrap {
+  top: 0;
+}
+
+.bm-item-list {
+  margin-top: 60px;
+  height: 80% !important;
+}
+
+.bm-item {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.bm-overlay {
+  display: none;
+}
+
+.bm-cross {
+  background: #fff;
+}
+
+
+.menuItem {
+  margin: 25px 0;
+  &:before,
+  &:after {
+    bottom: -8px;
+  }
+}
+
+.hamburger-menu {
+  display: block;
+  height: 40px;
+  padding: 20px 0 10px 0;
+}
+
+.mobile-logo {
+  margin-left: 15px;
+  margin-top: 10px;
+  a {
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-size: 18px;
+    color: $cream;
+    text-decoration: none;
+  }
+}

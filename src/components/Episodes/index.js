@@ -19,20 +19,31 @@ const Episodes = ({ pageTitle, children }) => {
             slug
             simplecastId
             keywords
+            image {
+            childImageSharp {
+              fixed(width: 300) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
           }
         }
       }
     }
   `)
+  
+  const titles = data?.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
+  const filteredData =  data?.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
+
   return (
     <>
       <PageHelmet />
       <div className={styles.pageContainer}>
         <Nav />
         <h1 className={styles.pageTitle}>Episodes</h1>
-        <div className={styles.episodesContainer}>
-          {data?.allSimplecastPodcastEpisode?.edges?.map(edge => 
-            <Episode title={edge.node.title} description={edge.node.description} slug={edge.node.slug} />
+        <div className={styles.episodesContainerClass}>
+          {filteredData.map((edge, idx) => 
+            <Episode key={idx} title={edge.node.title} description={edge.node.description} slug={edge.node.slug} image={edge.node.image?.childImageSharp?.fixed} />
           )}
         </div>
         <Footer />
