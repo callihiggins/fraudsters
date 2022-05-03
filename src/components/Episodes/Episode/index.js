@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import placeholder from '../../../images/placeholder.jpg'
 import * as styles from './styled';
 
-const Episode = ({ title, description, slug, image }) => {
+const Episode = ({ title, slug, image }) => {
   return (
     <div className={styles.episodeContainerClass}>
       <Link to={`./${slug}`}>

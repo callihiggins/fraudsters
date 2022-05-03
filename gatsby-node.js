@@ -1,7 +1,5 @@
 const path = require("path")
 
-console.log('hello from gatsby-node');
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const queryResults = await graphql(`
@@ -16,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             simplecastId
             keywords
+            publishedAt(formatString: "dddd, MMMM Do YYYY")
           }
         }
       }

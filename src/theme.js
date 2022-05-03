@@ -14,5 +14,6 @@ export default {
   },
   componentsHeight: {
     footer: '100px',
+    nav: '75px'
   }
 }

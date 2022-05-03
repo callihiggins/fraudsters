@@ -1,11 +1,11 @@
 import { css } from '@emotion/css';
 import { default as theme } from '../../theme';
 
-export const pageContainer = css`
+export const pageContainerClass = css`
   background-color: ${theme.colors.yellow};
 `;
 
-export const pageTitle = css`
+export const pageTitleClass = css`
   text-align: center;
   font-size: 72px;
   font-family: ${theme.fonts.upAway};
