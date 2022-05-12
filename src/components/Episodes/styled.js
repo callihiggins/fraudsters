@@ -3,6 +3,7 @@ import { default as theme } from '../../theme';
 
 export const pageContainerClass = css`
   background-color: ${theme.colors.yellow};
+  padding-top: ${theme.componentsHeight.nav};
 `;
 
 export const pageTitleClass = css`

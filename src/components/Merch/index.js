@@ -44,6 +44,10 @@ const html = `
   "product": {
     "styles": {
       "product": {
+        "background": "#FFFFFF",
+        "padding": "10px",
+        "border": "1px solid #000000",
+        "min-width": "383px",
         "@media (min-width: 601px)": {
           "max-width": "calc(25% - 20px)",
           "margin-left": "20px",
@@ -64,21 +68,25 @@ const html = `
         }
       },
       "title": {
-        "font-family": "PT Serif, serif",
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
         "font-weight": "normal",
-        "color": "#004564"
+        "color": "#000000"
       },
       "button": {
-        "font-family": "PT Serif, serif",
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
         ":hover": {
-          "background-color": "#da615c"
+          "background-color": "#FFDC04",
+          "color": "#000000"
         },
-        "background-color": "#f26c66",
+        "background-color": "#000000",
+        "color": "#FFDC04",
+        "font-weight": "700",
         ":focus": {
-          "background-color": "#da615c"
+          "background-color": "#FFDC04",
+          "color": "#000000"
         },
         "padding-left": "18px",
         "padding-right": "18px"
@@ -89,19 +97,19 @@ const html = `
         "padding-bottom": "16px"
       },
       "price": {
-        "font-family": "PT Serif, serif",
-        "font-weight": "bold",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-weight": 700,
+        "color": "#000000"
       },
       "compareAt": {
-        "font-family": "PT Serif, serif",
-        "font-weight": "bold",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-weight": 700,
+        "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "PT Serif, serif",
-        "font-weight": "bold",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-weight": 700,
+        "color": "#000000"
       }
     },
     "buttonDestination": "modal",
@@ -118,8 +126,23 @@ const html = `
   "productSet": {
     "styles": {
       "products": {
+        "display": "flex",
+        "flex-wrap": "wrap",
+        "justify-content": "center",
         "@media (min-width: 601px)": {
           "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modal": {
+    "styles": {
+      "close": {
+        "top": "0",
+        "color": "#000000",
+        "outline": "0",
+        ":hover": {
+          "color": "0",
         }
       }
     }
@@ -140,16 +163,18 @@ const html = `
         }
       },
       "button": {
-        "font-family": "PT Serif, serif",
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
         ":hover": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         },
-        "background-color": "#f26c66",
+        "background-color": "#000000",
         ":focus": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         },
         "padding-left": "18px",
         "padding-right": "18px"
@@ -160,25 +185,26 @@ const html = `
         "padding-bottom": "16px"
       },
       "title": {
-        "font-family": "PT Serif, serif",
-        "font-weight": "normal",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-weight": "700",
+
+        "color": "#000000"
       },
       "price": {
-        "font-family": "PT Serif, serif",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "color": "#000000"
       },
       "compareAt": {
-        "font-family": "PT Serif, serif",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "PT Serif, serif",
-        "color": "#004564"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "color": "#000000"
       },
       "description": {
-        "font-family": "PT Serif, serif"
-      }
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
+      },
     },
     "googleFonts": [
       "PT Serif"
@@ -190,10 +216,10 @@ const html = `
   "option": {
     "styles": {
       "label": {
-        "font-family": "PT Serif, serif"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
       },
       "select": {
-        "font-family": "PT Serif, serif"
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
       }
     },
     "googleFonts": [
@@ -203,59 +229,62 @@ const html = `
   "cart": {
     "styles": {
       "button": {
-        "font-family": "PT Serif, serif",
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
         ":hover": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         },
-        "background-color": "#f26c66",
+        "background-color": "##FFDC04",
         ":focus": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         }
       },
       "title": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "header": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "lineItems": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "subtotalText": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "subtotal": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "notice": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "currency": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "close": {
-        "color": "#004564",
+        "color": "#000000",
         ":hover": {
-          "color": "#004564"
-        }
+          "color": "#000000"
+        },
+        "top": "0",
       },
       "empty": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "noteDescription": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "discountText": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "discountIcon": {
-        "fill": "#004564"
+        "fill": "#000000"
       },
       "discountAmount": {
-        "color": "#004564"
+        "color": "#000000"
       }
     },
     "text": {
@@ -271,13 +300,15 @@ const html = `
   "toggle": {
     "styles": {
       "toggle": {
-        "font-family": "PT Serif, serif",
-        "background-color": "#f26c66",
+        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "background-color": "#000000",
         ":hover": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         },
         ":focus": {
-          "background-color": "#da615c"
+          "background-color": "#FFFFFF",
+          "color": "#000000"
         }
       },
       "count": {
@@ -291,37 +322,37 @@ const html = `
   "lineItem": {
     "styles": {
       "variantTitle": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "title": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "price": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "fullPrice": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "discount": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "discountIcon": {
-        "fill": "#004564"
+        "fill": "#000000"
       },
       "quantity": {
-        "color": "#004564"
+        "color": "#000000"
       },
       "quantityIncrement": {
-        "color": "#004564",
-        "border-color": "#004564"
+        "color": "#000000",
+        "border-color": "#000000"
       },
       "quantityDecrement": {
-        "color": "#004564",
-        "border-color": "#004564"
+        "color": "#000000",
+        "border-color": "#000000"
       },
       "quantityInput": {
-        "color": "#004564",
-        "border-color": "#004564"
+        "color": "#000000",
+        "border-color": "#000000"
       }
     }
   }
@@ -337,10 +368,10 @@ const html = `
 export const Merch = () => 
   <>
     <PageHelmet />
+    <Nav />
     <div className={styles.pageContainerClass}>
-      <Nav />
-      <h1 className={styles.pageTitleClass}>Merch</h1>
-      <div css={styles.containerClass}>
+      <h1 className={styles.pageTitleClass}>Snag Some Fraudsters Swag</h1>
+      <div className={styles.containerClass}>
         <InnerHTML html={html} />
       </div>
     </div>

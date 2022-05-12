@@ -12,6 +12,9 @@ export const navContainer = css`
   justify-content: space-between;
   padding: 10px 20px;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `;
 
 export const logoContainer = css`
