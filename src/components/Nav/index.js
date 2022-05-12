@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { cx } from '@emotion/css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MobileNav from './MobileNav';
 import * as styles from './styled';
