@@ -41,30 +41,26 @@ const html = `
         node: document.getElementById('collection-component-1627512936549'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
-  "product": {
-    "styles": {
       "product": {
-        "background": "#FFFFFF",
-        "padding": "10px",
-        "border": "1px solid #000000",
-        "min-width": "383px",
-        "@media (min-width: 601px)": {
-          "max-width": "calc(25% - 20px)",
-          "margin-left": "20px",
-          "margin-bottom": "50px",
-          "width": "calc(25% - 20px)"
-        },
-        "img": {
-          "height": "calc(100% - 15px)",
-          "position": "absolute",
-          "left": "0",
-          "right": "0",
-          "top": "0"
-        },
-        "imgWrapper": {
-          "padding-top": "calc(75% + 15px)",
-          "position": "relative",
-          "height": "0"
+        "styles": {
+          "product": {
+            "background": "#FFFFFF",
+            "padding": "10px",
+            "border": "1px solid #000000",
+            "width": "28%",
+            "max-width": "28%",
+            "margin": "20px !important",
+            "img": {
+              "height": "calc(100% - 15px)",
+              "position": "absolute",
+              "left": "0",
+              "right": "0",
+              "top": "0"
+            },
+            "imgWrapper": {
+              "padding-top": "calc(75% + 15px)",
+              "position": "relative",
+              "height": "0"
         }
       },
       "title": {

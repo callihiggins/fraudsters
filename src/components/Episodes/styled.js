@@ -8,13 +8,21 @@ export const pageContainerClass = css`
 
 export const pageTitleClass = css`
   text-align: center;
-  font-size: 72px;
   font-family: ${theme.fonts.upAway};
   margin: 10px 0;
+  font-size: 72px;
+  padding: 20px;
+
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    width: 80%;
+    font-size: 48px;
+  }
 `;
 
 export const episodesContainerClass = css`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
 `;

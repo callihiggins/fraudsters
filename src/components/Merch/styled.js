@@ -10,8 +10,6 @@ export const pageContainerClass = css`
 export const pageTitleClass = css`
   margin: 20px auto;
   font-family: ${theme.fonts.upAway};
-  // background-color: #000000;
-  // color: ${theme.colors.yellow};
   color: #000000;
   text-align: center;
   padding: 10px 0;

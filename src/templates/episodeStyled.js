@@ -14,13 +14,15 @@ export const pageTitleClass = css`
 `;
 
 export const episodeContainerClass = css`
+  padding: 20px;
+  padding-top: calc(${theme.componentsHeight.nav} + 20px);
   display: flex;
   gap: 40px;
-  padding: 20px;
   flex-direction: column;
   width: 70%;
   margin: 0 auto;
   font-size: 18px;
+
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     width: 90%;
