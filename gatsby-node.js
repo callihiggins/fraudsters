@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
             guid
             title
             description
+            longDescription
             slug
             simplecastId
             keywords

@@ -24,9 +24,11 @@ function EpisodePage({ pageContext }) {
         <div className={styles.episodeContainerClass}>
             <h1 className={styles.pageTitleClass}>{episode.title}</h1>
             <div className={styles.imageAndPlayerClass}>
-              <div className={styles.descriptionAndPlayerClass({ hasDescription : episode.description })} >
+              <div className={styles.descriptionAndPlayerClass({ hasDescription : episode.longDescription || episode.description })} >
                 <div className={styles.publishedDateClass}>{episode.publishedAt}</div>
-                <div className={styles.descriptionClass}>{episode.description}</div>
+                <div className={styles.descriptionClass}>
+                  <div dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}></div>
+                </div>
                 <iframe height={ episode.description ? '122px' : '250px'} width="100%" frameBorder="no" scrolling="no" title={episode.title} seamless src={`https://player.simplecast.com/${episode.simplecastId}?dark=true&amp;show=true&amp;color=000000`}></iframe>
               </div>
               {episode.image ? <Img fixed={episode.image} /> : <img src={placeholder}/>}

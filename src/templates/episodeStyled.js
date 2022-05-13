@@ -7,7 +7,6 @@ export const pageContainerClass = css`
 `;
 
 export const pageTitleClass = css`
-  text-align: center;
   font-size: 48x;
   font-family: ${theme.fonts.upAway};
   margin: 10px 0 20px 0;

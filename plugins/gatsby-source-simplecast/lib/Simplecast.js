@@ -53,6 +53,25 @@ class Simplecast {
       .catch(console.error);
   };
 
+  getEpisodeDescription = slug => {
+    if (!slug) {
+      throw Error('No episode slug provided.');
+    }
+
+    const payload = {
+      url: `https://fraudsters.simplecast.com/episodes/${slug}`
+    }
+    return fetch(`https://api.simplecast.com/episodes/search`, {
+      method: 'POST',
+      headers: this.headers,
+      cache: 'default',
+      body: JSON.stringify(payload)
+    })
+      .then(res => res.json())
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch(console.error);;
+  }
+
   getShowInfo = () => {
     return this.request(`podcasts/${this.podcastId}`)
       .then(res => res.json())
