@@ -10,11 +10,16 @@ export const pageTitleClass = css`
   text-align: center;
   font-size: 48x;
   font-family: ${theme.fonts.upAway};
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
+
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const publishedDateClass = css`
-  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 export const episodeContainerClass = css`
@@ -27,25 +32,27 @@ export const episodeContainerClass = css`
   margin: 0 auto;
   font-size: 18px;
 
-
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
+  @media only screen and (max-width: ${theme.breakpoints.medium}) {
     width: 90%;
   }
 `;
 
 export const imageAndPlayerClass = css`
   display: flex;
-  flex-direction: column;
   gap: 20px;
 
   img {
     margin: 0 auto;
-    width: 38%;
+    width: 30%;
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    flex-wrap: wrap;
     img {
       width: 75%;
+      height: auto;
+      order: 1;
+      ratio: 1/1;
     }
   }
 `;
@@ -96,4 +103,19 @@ export const hideDesktop = css`
 export const alignRightClass = css`
   text-align: right;
   justify-content: flex-end;
+`;
+
+export const descriptionAndPlayerClass = props => css`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${props.hasDescription ? 'space-between' : 'flex-start'};
+  width: calc(70% - 20px);
+  gap: 20px;
+
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    width: 100%;
+    margin: 0 auto;
+    order: 2;
+    gap: ${props.hasDescription ? '20px' : '10px'};;
+  }
 `;
