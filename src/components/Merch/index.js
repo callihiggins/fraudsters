@@ -23,6 +23,13 @@ const html = `
     loadScript();
   }
   function loadScript() {
+    var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'https://use.typekit.net/fqf2qwn.css';
+    link.media = 'all';
+    head.appendChild(link);
 
     var script = document.createElement('script');
     script.async = true;
@@ -64,12 +71,12 @@ const html = `
         }
       },
       "title": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-weight": "normal",
         "color": "#000000"
       },
       "button": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
@@ -93,17 +100,17 @@ const html = `
         "padding-bottom": "16px"
       },
       "price": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-weight": 700,
         "color": "#000000"
       },
       "compareAt": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-weight": 700,
         "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-weight": 700,
         "color": "#000000"
       }
@@ -116,7 +123,7 @@ const html = `
       "button": "Details"
     },
     "googleFonts": [
-      "PT Serif"
+      "Poppins"
     ]
   },
   "productSet": {
@@ -159,7 +166,7 @@ const html = `
         }
       },
       "button": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
@@ -182,29 +189,29 @@ const html = `
         "padding-bottom": "16px"
       },
       "title": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-weight": "700",
 
         "color": "#000000"
       },
       "price": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "color": "#000000"
       },
       "compareAt": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "color": "#000000"
       },
       "description": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
+        "font-family": "Poppins, sans-serif"
       },
     },
     "googleFonts": [
-      "PT Serif"
+      "Poppins"
     ],
     "text": {
       "button": "Add to cart"
@@ -213,10 +220,10 @@ const html = `
   "option": {
     "styles": {
       "label": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
+        "font-family": "Poppins, sans-serif"
       },
       "select": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif"
+        "font-family": "Poppins, sans-serif"
       }
     },
     "googleFonts": [
@@ -226,7 +233,7 @@ const html = `
   "cart": {
     "styles": {
       "button": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "font-size": "16px",
         "padding-top": "16px",
         "padding-bottom": "16px",
@@ -297,7 +304,7 @@ const html = `
   "toggle": {
     "styles": {
       "toggle": {
-        "font-family": "itc-avant-garde-gothic-pro, sans-serif",
+        "font-family": "Poppins, sans-serif",
         "background-color": "#000000",
         ":hover": {
           "background-color": "#FFFFFF",

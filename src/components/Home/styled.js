@@ -75,7 +75,7 @@ export const subTitleClass = css`
   width: 50%;
   font-size: 20px;
 
-  @media only screen and (max-width: ${theme.breakpoints.medium}) {
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
     width: 80%;
   }
 
@@ -91,8 +91,14 @@ export const playerClass = css`
   padding: 40px 0 0 20px;
 
   iframe {
-    width: 40%;
+    width: 50%;
     height: calc(100vh - ${theme.componentsHeight.footer} - 350px);
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.medium}) {
+    iframe {
+      width: 40%;
+    }
   }
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
