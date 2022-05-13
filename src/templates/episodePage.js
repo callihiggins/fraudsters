@@ -2,7 +2,7 @@ import * as React from 'react';
 import { cx } from '@emotion/css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
@@ -13,8 +13,7 @@ import * as styles from './episodeStyled';
 import Img from 'gatsby-image';
 import placeholder from '../images/placeholder.jpg';
 
-library.add(fab, faEnvelope, faArrowLeft, faArrowRight);
-import { episodeContainerClass } from '../components/Episodes/Episode/styled';
+library.add(fab, faEnvelope);
 
 function EpisodePage({ pageContext }) {
   const { episode, nextEpisode, prevEpisode } = pageContext;

@@ -15,7 +15,6 @@ export const footerClass = css`
 
 export const logoClass = css`
   width: 75px;
-  height: 70px;
 `;
 
 export const rightSideClass = css`
@@ -27,7 +26,7 @@ export const rightSideClass = css`
 export const leftSideClass = css`
   display: flex;
   justify-content: space-between;
-  width: 200px;
+  width: 180px;
   align-items: center;
 `;
 
