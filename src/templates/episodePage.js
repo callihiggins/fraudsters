@@ -16,6 +16,7 @@ library.add(fab, faEnvelope, faArrowLeft, faArrowRight);
 
 function EpisodePage({ pageContext }) {
   const { episode, nextEpisode, prevEpisode } = pageContext;
+  const formattedTime = new Date(episode.duration * 1000).toISOString().slice(11, 19);
   return (
     <>
       <div className={styles.pageContainerClass}>
@@ -25,7 +26,7 @@ function EpisodePage({ pageContext }) {
             <h1 className={styles.pageTitleClass}>{episode.title}</h1>
             <div className={styles.imageAndPlayerClass}>
               <div className={styles.descriptionAndPlayerClass({ hasDescription : episode.longDescription || episode.description })} >
-                <div className={styles.publishedDateClass}>{episode.publishedAt}</div>
+                <div className={styles.publishedDateClass}>{episode.publishedAt} | {formattedTime}</div>
                 <div className={styles.descriptionClass}>
                   <div dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}></div>
                 </div>

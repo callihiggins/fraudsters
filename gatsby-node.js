@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             description
             longDescription
+            duration
             slug
             simplecastId
             keywords
