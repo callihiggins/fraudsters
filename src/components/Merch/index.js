@@ -74,15 +74,15 @@ const html = `
         "padding-top": "16px",
         "padding-bottom": "16px",
         ":hover": {
-          "background-color": "#FFDC04",
-          "color": "#000000"
+          "background-color": "#000000",
+          "color": "#FFDC04",
         },
         "background-color": "#000000",
-        "color": "#FFDC04",
+        "color": "#FFFFFF",
         "font-weight": "700",
         ":focus": {
-          "background-color": "#FFDC04",
-          "color": "#000000"
+          "background-color": "#000000",
+          "color": "#FFFFFF",
         },
         "padding-left": "18px",
         "padding-right": "18px"
@@ -113,7 +113,7 @@ const html = `
       "options": false
     },
     "text": {
-      "button": "View product"
+      "button": "Details"
     },
     "googleFonts": [
       "PT Serif"
@@ -164,13 +164,14 @@ const html = `
         "padding-top": "16px",
         "padding-bottom": "16px",
         ":hover": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
+          "background-color": "#000000",
+          "color": "#FFDC04"
         },
+        "color": "#FFFFFF",
         "background-color": "#000000",
         ":focus": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
+          "background-color": "#000000",
+          "color": "#FFDC04"
         },
         "padding-left": "18px",
         "padding-right": "18px"

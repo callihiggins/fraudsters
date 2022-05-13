@@ -32,7 +32,7 @@ function EpisodePage({ pageContext }) {
               {episode.image ? <Img fixed={episode.image} /> : <img src={placeholder}/>}
 
             </div>
-            <div className={styles.navigationClass}>
+            <div className={styles.navigationClass({ hasPrevious : prevEpisode })}>
               {prevEpisode && (
                 <div className={styles.episodeNavClass}>
                   <Link to={`/episodes/${prevEpisode.slug}`}>

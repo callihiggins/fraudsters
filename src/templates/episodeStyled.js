@@ -44,6 +44,8 @@ export const imageAndPlayerClass = css`
   img {
     margin: 0 auto;
     width: 30%;
+    aspect-ratio: 1 / 1;
+    align-self: center;
   }
 
   @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
@@ -52,14 +54,13 @@ export const imageAndPlayerClass = css`
       width: 75%;
       height: auto;
       order: 1;
-      ratio: 1/1;
     }
   }
 `;
 
-export const navigationClass = css`
+export const navigationClass = props => css`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props.hasPrevious ? 'space-between' : 'flex-end'};
   width: 100%;
   font-size: 14px;
   font-weight: 700;
