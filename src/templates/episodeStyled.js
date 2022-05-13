@@ -7,9 +7,9 @@ export const pageContainerClass = css`
 `;
 
 export const pageTitleClass = css`
-  font-size: 48x;
+  font-size: 48px;
   font-family: ${theme.fonts.upAway};
-  margin: 10px 0 20px 0;
+  margin-top: 10px;
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     margin-bottom: 10px;
@@ -38,11 +38,11 @@ export const episodeContainerClass = css`
 
 export const imageAndPlayerClass = css`
   display: flex;
-  gap: 20px;
+  gap: 40px;
 
   img {
+    width: 100%;
     margin: 0 auto;
-    width: 30%;
     aspect-ratio: 1 / 1;
     align-self: center;
   }
@@ -63,6 +63,7 @@ export const navigationClass = props => css`
   width: 100%;
   font-size: 14px;
   font-weight: 700;
+  border-top: 1px solid rgba(15,15,15,0.1);
 `;
 
 export const episodeNavClass = css`
@@ -108,7 +109,6 @@ export const alignRightClass = css`
 export const descriptionAndPlayerClass = props => css`
   display: flex;
   flex-direction: column;
-  justify-content: ${props.hasDescription ? 'space-between' : 'flex-start'};
   width: calc(70% - 20px);
   gap: 20px;
 
@@ -117,5 +117,41 @@ export const descriptionAndPlayerClass = props => css`
     margin: 0 auto;
     order: 2;
     gap: ${props.hasDescription ? '20px' : '10px'};;
+  }
+`;
+
+export const descriptionClass = css`
+  font-size: 16px;
+  line-height: 22px;
+  p {
+    margin-top: 7px;
+
+    a {
+      color: #000000;
+    }
+  }
+
+  a {
+    color: #000000;
+  }
+`;
+
+export const imageAndAuthorsClass = css`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 20px;
+
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    width: 100%;
+  }
+`;
+
+export const authorsClass = css`
+  border-top: 1px solid rgba(15,15,15,0.1);
+  font-size: 14px;
+  padding-top: 10px;
+  ul {
+    list-style: none;
   }
 `;

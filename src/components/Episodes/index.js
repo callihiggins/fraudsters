@@ -9,7 +9,7 @@ import * as styles from './styled';
 const Episodes = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {
-      allSimplecastPodcastEpisode {
+      allSimplecastPodcastEpisode(sort: { fields: [publishedAt, number ], order: DESC }) {
         edges {
           node {
             id

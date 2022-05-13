@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
             description
             longDescription
             duration
+            authors
             slug
             number
             simplecastId
@@ -38,6 +39,10 @@ exports.createPages = async ({ graphql, actions }) => {
     if (index < filteredData.length - 1) {
       prevEpisode = filteredData[index + 1].node;
     }
+    console.log(edge.node.authors)
+
+    const defaultAuthors = ['Seena Ghaznavi', 'Justin Williams'];
+    if (!edge.node.authors || edge.node.authors.length === 0) edge.node.authors = [...defaultAuthors];
     createPage({
       path: `/episodes/${edge.node.slug}`,
       component: episodeTemplate,

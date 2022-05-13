@@ -43,7 +43,7 @@ exports.sourceNodes = async (
     const episodesWithSearchData = await Promise.all(episodesWithKeywords.map(async episode => {
       const episodeNode = await sc.getEpisodeSearchData(episode.slug);
       episode.longDescription = episodeNode.longDescription;
-     episode.authors = episodeNode.authors?.collection?.map(author => author.name);
+      episode.authors = episodeNode.authors?.collection?.map(author => author.name);
       return episode;
     }));
     episodesWithSearchData
