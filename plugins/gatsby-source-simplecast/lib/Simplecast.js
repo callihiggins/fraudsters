@@ -53,7 +53,7 @@ class Simplecast {
       .catch(console.error);
   };
 
-  getEpisodeDescription = slug => {
+  getEpisodeSearchData = slug => {
     if (!slug) {
       throw Error('No episode slug provided.');
     }

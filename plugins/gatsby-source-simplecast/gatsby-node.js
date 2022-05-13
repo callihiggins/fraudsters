@@ -40,12 +40,13 @@ exports.sourceNodes = async (
         episode.keywords = keyWordNodeValues;
         return episode;
     }));
-    const episodesWithDescriptions = await Promise.all(episodesWithKeywords.map(async episode => {
-      const episodeNode = await sc.getEpisodeDescription(episode.slug);
+    const episodesWithSearchData = await Promise.all(episodesWithKeywords.map(async episode => {
+      const episodeNode = await sc.getEpisodeSearchData(episode.slug);
       episode.longDescription = episodeNode.longDescription;
+     episode.authors = episodeNode.authors?.collection?.map(author => author.name);
       return episode;
     }));
-    episodesWithDescriptions
+    episodesWithSearchData
       .map(episode => {
         return PodcastEpisodeNode(episode)
       })

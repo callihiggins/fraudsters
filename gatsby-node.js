@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const queryResults = await graphql(`
     query PodcastPageQuery {
-      allSimplecastPodcastEpisode {
+      allSimplecastPodcastEpisode(sort: { fields: [publishedAt, number ], order: DESC }) {
         edges {
           node {
             id
@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
             longDescription
             duration
             slug
+            number
             simplecastId
             keywords
             publishedAt(formatString: "dddd, MMMM Do YYYY")
