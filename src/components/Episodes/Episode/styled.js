@@ -7,8 +7,19 @@ export const titleClass = css`
   cursor: pointer;
   background: #000;
   color: ${theme.colors.white};
-  padding: 15px;
+  padding: 0px 15px 15px 15px;
   font-weight: 500;
+`;
+
+export const dateClass = css`
+  font-size: 12px; 
+  color: #000;
+  cursor: pointer;
+  background: #000;
+  color: ${theme.colors.white};
+  padding: 15px 15px 10px 15px;
+  font-weight: 700;
+  text-align: center;
 `;
 
 export const episodeContainerClass = css`

@@ -19,6 +19,7 @@ const Episodes = ({ pageTitle, children }) => {
             slug
             simplecastId
             keywords
+            publishedAt(formatString: "MMMM DD, YYYY")
             image {
             childImageSharp {
               fixed(width: 300) {
@@ -43,7 +44,7 @@ const Episodes = ({ pageTitle, children }) => {
         <h1 className={styles.pageTitleClass}>Episodes</h1>
         <div className={styles.episodesContainerClass}>
           {filteredData.map((edge, idx) => 
-            <Episode key={idx} title={edge.node.title} description={edge.node.description} slug={edge.node.slug} image={edge.node.image?.childImageSharp?.fixed} />
+            <Episode key={idx} title={edge.node.title} publishedAt={edge.node.publishedAt} description={edge.node.description} slug={edge.node.slug} image={edge.node.image?.childImageSharp?.fixed} />
           )}
         </div>
         <Footer />
