@@ -28,6 +28,7 @@ export const containerClass = css`
   display: flex;
   gap: 40px;
   justify-content: space-between;
+  padding-top: 20px;
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     flex-wrap: wrap;
   }

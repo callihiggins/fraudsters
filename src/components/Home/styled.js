@@ -13,6 +13,7 @@ export const mainContainerClass = css`
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     height: auto;
+    width: 100%;
     min-height: calc(100vh - ${theme.componentsHeight.footer});
   }
 `;
@@ -55,11 +56,11 @@ export const drawingClass = css`
     }
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
-    img {
-      width: 60%;
-    }
-  }
+  // @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  //   img {
+  //     width: 60%;
+  //   }
+  // }
 
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
@@ -95,7 +96,7 @@ export const playerClass = css`
     height: calc(100vh - ${theme.componentsHeight.footer} - 350px);
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.medium}) {
+  @media only screen and (max-width: ${theme.breakpoints.mediumLarge}) {
     iframe {
       width: 40%;
     }
@@ -125,9 +126,9 @@ export const mobileImageClass = css`
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     display: block;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
     img {
-      width: 80%;
+      width: 60%;
     }
   }
 `;
