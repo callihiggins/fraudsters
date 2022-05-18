@@ -82,7 +82,7 @@ exports.onCreateNode = async ({
   }
 }
 
-exports.createSchemaCustomization = ({ actions, schema }) => {s
+exports.createSchemaCustomization = ({ actions, schema }) => {
   actions.createTypes(
     `type SimplecastPodcastEpisode implements Node {
       image: File @link(from: "image___NODE")
