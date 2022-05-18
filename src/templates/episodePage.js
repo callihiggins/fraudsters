@@ -11,7 +11,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import * as styles from './episodeStyled';
 import Img from 'gatsby-image';
-import placeholder from '../images/placeholder.jpg';
+import { StaticImage } from "gatsby-plugin-image"
 
 library.add(fab, faEnvelope);
 
@@ -22,11 +22,10 @@ function EpisodePage({ pageContext }) {
   const authorsHTML = episode.authors.map(author => 
     <li>{author}</li>
   )
-
   return (
     <>
       <div className={styles.pageContainerClass}>
-        <PageHelmet image={episode.image} description={episode.longDescription || episode.description} title={episode.title} keywords={[...episode.authors, ...episode.keywords]} />
+        <PageHelmet image={episode.imageUrl} description={episode.longDescription || episode.description} title={episode.title} keywords={[...episode.authors, ...episode.keywords]} />
         <Nav />
         <div className={styles.episodeContainerClass}>
             <h1 className={styles.pageTitleClass}>{episode.title}</h1>
@@ -38,7 +37,7 @@ function EpisodePage({ pageContext }) {
                 <iframe height={ episode.longDescription || episode.description ? '122px' : '250px'} width="100%" frameBorder="no" scrolling="no" title={episode.title} seamless src={`https://player.simplecast.com/${episode.simplecastId}?dark=true&amp;show=true&amp;color=000000`}></iframe>
               </div>
               <div className={styles.imageAndAuthorsClass}>
-                {episode.image ? <Img fixed={episode.image} /> : <img src={placeholder}/>}
+                {episode.image ? <Img fluid={episode.image.childImageSharp.fluid} width="100%" /> : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}
                 <div className={cx(styles.authorsClass, styles.hideMobile)}>
                   <strong>Show Contributors</strong>
                   <ul>

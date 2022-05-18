@@ -19,6 +19,17 @@ exports.createPages = async ({ graphql, actions }) => {
             simplecastId
             keywords
             publishedAt(formatString: "dddd, MMMM Do YYYY")
+            imageUrl
+            image {
+              childImageSharp {
+                fluid(quality: 100) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
           }
         }
       }
@@ -27,8 +38,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const titles = queryResults.data.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
   const filteredData =  queryResults.data.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
-
   const episodeTemplate = path.resolve(`src/templates/episodePage.js`);
+  const episodesTemplate = path.resolve(`src/templates/episodesPage.js`);
+
+  createPage({
+    path: `/episodes`,
+    component: episodesTemplate,
+    context: {
+      episodesData: filteredData,
+    },
+  })
   
   filteredData.forEach((edge, index) => {
     let prevEpisode = null;
@@ -39,8 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (index < filteredData.length - 1) {
       prevEpisode = filteredData[index + 1].node;
     }
-    console.log(edge.node.authors)
-
+  
     const defaultAuthors = ['Seena Ghaznavi', 'Justin Williams'];
     if (!edge.node.authors || edge.node.authors.length === 0) edge.node.authors = [...defaultAuthors];
     createPage({

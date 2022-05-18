@@ -6,36 +6,7 @@ import Episode from './Episode';
 import Nav from '../Nav';
 import * as styles from './styled';
 
-const Episodes = ({ pageTitle, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allSimplecastPodcastEpisode(sort: { fields: [publishedAt, number ], order: DESC }) {
-        edges {
-          node {
-            id
-            guid
-            title
-            description
-            slug
-            simplecastId
-            keywords
-            publishedAt(formatString: "MMMM DD, YYYY")
-            image {
-            childImageSharp {
-              fixed(width: 300) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-          }
-        }
-      }
-    }
-  `)
-  
-  const titles = data?.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
-  const filteredData =  data?.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
-
+const Episodes = ({ episodesData }) => {
   return (
     <>
       <PageHelmet />
@@ -43,8 +14,8 @@ const Episodes = ({ pageTitle, children }) => {
         <Nav />
         <h1 className={styles.pageTitleClass}>Episodes</h1>
         <div className={styles.episodesContainerClass}>
-          {filteredData.map((edge, idx) => 
-            <Episode key={idx} title={edge.node.title} publishedAt={edge.node.publishedAt} description={edge.node.description} slug={edge.node.slug} image={edge.node.image?.childImageSharp?.fixed} />
+          {episodesData.map(({ node: { title, publishedAt, image, slug, description }}, idx) => 
+            <Episode key={idx} title={title} publishedAt={publishedAt} description={description} slug={slug} image={image} />
           )}
         </div>
         <Footer />

@@ -7,7 +7,7 @@ export const pageContainerClass = css`
 `;
 
 export const pageTitleClass = css`
-  font-size: 48px;
+  font-size: 36px;
   font-family: ${theme.fonts.upAway};
   margin-top: 10px;
 
@@ -63,12 +63,13 @@ export const navigationClass = props => css`
   width: 100%;
   font-size: 14px;
   font-weight: 700;
+  margin-top: 10px;
   border-top: 1px solid rgba(15,15,15,0.1);
 `;
 
 export const episodeNavClass = css`
   width: 300px;
-  margin-top: 20px;
+  margin-top: 30px;
 
   a {
     text-decoration: none;
@@ -85,6 +86,12 @@ export const episodeNavInfoClass = css`
   display: flex;
   gap: 8px;
   align-items: center;
+  color: rgba(0,0,0,1);
+
+  &:hover {
+    transition: color .5s ease;
+    color: rgba(15,15,15, .7)
+  }
 
 `;
 
@@ -154,4 +161,8 @@ export const authorsClass = css`
   ul {
     list-style: none;
   }
+`;
+
+export const plaeceHolderImageClass = css`
+  border: 1px solid #000000;
 `;

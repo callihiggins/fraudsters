@@ -50,7 +50,7 @@ exports.sourceNodes = async (
       .map(episode => {
         return PodcastEpisodeNode(episode)
       })
-     .forEach(node => createNode(node))
+     .forEach(node => createNode(node));
 
     setPluginStatus({ lastFetched: Date.now() });
   } catch (err) {
@@ -58,7 +58,7 @@ exports.sourceNodes = async (
   }
 };
 
-const nodeWithImage = ['SimplecastPodcastEpisode', 'SimplecastPodcast']
+const nodeWithImage = ['SimplecastPodcastEpisode']
 
 exports.onCreateNode = async ({
   node,
@@ -67,7 +67,6 @@ exports.onCreateNode = async ({
   cache,
   createNodeId,
 }) => {
-
   if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
     const fileNode = await createRemoteFileNode({
       url: node.imageUrl,
@@ -77,20 +76,16 @@ exports.onCreateNode = async ({
       cache,
       store,
     })
-
     if (fileNode) {
       node.image___NODE = fileNode.id
     }
   }
 }
 
-exports.createSchemaCustomization = ({ actions }) => {
-  actions.createTypes(`
-    type SimplecastPodcastEpisode implements Node {
+exports.createSchemaCustomization = ({ actions, schema }) => {s
+  actions.createTypes(
+    `type SimplecastPodcastEpisode implements Node {
       image: File @link(from: "image___NODE")
-    }
-    type SimplecastPodcast implements Node {
-      image: File @link(from: "image___NODE")
-    }
-  `)
-}
+    }`
+  );
+};
