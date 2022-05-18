@@ -52,15 +52,15 @@ export const drawingClass = css`
   @media only screen and (max-width: ${theme.breakpoints.medium}) {
     img {
       height: auto;
-      width: 75%;
+      width: 80%;
     }
   }
 
-  // @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
-  //   img {
-  //     width: 60%;
-  //   }
-  // }
+  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+    img {
+      width: 65%;
+    }
+  }
 
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
