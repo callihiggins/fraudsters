@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { brands, regular, solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { StaticImage } from "gatsby-plugin-image"
 import PageHelmet from '../PageHelmet';
 import Footer from '../Footer';
 import Nav from '../Nav';
-import seenaImage from '../../images/seena.jpeg';
-import justinImage from '../../images/justin.png';
-import hazelImage from '../../images/hazel.jpeg';
 import * as styles from './styled';
 
 export const About = () => 
@@ -17,7 +15,7 @@ export const About = () =>
       <h1 className={styles.pageTitleClass}>Meet your friendly, neighborhood Fraudbusters</h1>
       <div className={styles.containerClass}>
         <div className={styles.personClass}>
-          <img src={seenaImage} alt="Seena Ghaznavi" />
+          <StaticImage src='../../images/seena.jpeg' alt="Seena Ghaznavi" />
           <div className={styles.bioClass}>
               <div className={styles.quoteClass}>
                 “I’m Seena.”
@@ -31,7 +29,7 @@ export const About = () =>
           </div>
         </div>
         <div className={styles.personClass}>
-          <img src={justinImage} alt="Justin Williams" />
+          <StaticImage src='../../images/justin.png' alt="Justin Williams" />
           <div className={styles.bioClass}>
               <div className={styles.quoteClass}>
                 “I’m Justin.”
@@ -47,7 +45,7 @@ export const About = () =>
           </div>
         </div>
         <div className={styles.personClass}>
-          <img src={hazelImage} alt="Hazel Leezah" />
+          <StaticImage src='../../images/hazel.jpeg' alt="Hazel Leezah" />
           <div className={styles.bioClass}>
           <div className={styles.quoteClass}>
                 “I’m Hazel.”

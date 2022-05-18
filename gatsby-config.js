@@ -8,28 +8,35 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
-    "gatsby-plugin-emotion", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", `gatsby-plugin-fontawesome-css`, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-fontawesome-css", 
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/",
+      },
+      __key: "images"
     },
-    __key: "images"
-  },
-  {
-    resolve: 'gatsby-source-simplecast',
-    options: {
-      token: process.env.SIMPLECAST_TOKEN,
-      podcastId: process.env.SIMPLECAST_ID,
-    },
-  },
-  {
-    resolve: "gatsby-plugin-web-font-loader",
-    options: {
-      typekit: {
-        id: process.env.TYPEKIT_ID,
+    {
+      resolve: 'gatsby-source-simplecast',
+      options: {
+        token: process.env.SIMPLECAST_TOKEN,
+        podcastId: process.env.SIMPLECAST_ID,
       },
     },
-  },
-]
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
+    },
+  ]
 };

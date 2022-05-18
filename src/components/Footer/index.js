@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import lostPodcastImage from '../../images/lastPodcastNetwork.jpg';
-import zerocool from '../../images/zerocool.png';
+import { StaticImage } from "gatsby-plugin-image"
 import * as styles from './styled';
 
 const Footer = () => {
   return (
     <footer className={styles.footerClass}>
       <div className={styles.leftSideClass}>
-        <img src={zerocool} className={styles.logoClass} alt="Zero Cool"/>
-        <img src={lostPodcastImage} className={styles.logoClass} alt="Last Podcast Network"/>
+        <StaticImage width={70} layout="fixed" src='../../images/zerocool.png' className={styles.logoClass} alt="Zero Cool"/>
+        <StaticImage width={70} layout="fixed" src='../../images/lastPodcastNetwork.jpg' className={styles.logoClass} alt="Last Podcast Network"/>
         {/* <div className={styles.copyrightClass}>&copy; Fraudsters 2022</div> */}
       </div>
       <div className={styles.rightSideClass}>
