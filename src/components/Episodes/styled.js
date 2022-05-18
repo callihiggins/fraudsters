@@ -14,15 +14,21 @@ export const pageTitleClass = css`
   padding: 20px;
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
-    width: 80%;
+    width:  80%;
     font-size: 48px;
+    margin: 0 auto;
   }
 `;
 
 export const episodesContainerClass = css`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 80%;
   margin: 0 auto;
+
+  a {
+    text-decoration: none;
+  }
 `;

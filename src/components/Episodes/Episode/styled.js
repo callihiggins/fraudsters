@@ -2,43 +2,66 @@ import { css } from '@emotion/css';
 import { default as theme } from '../../../theme';
 
 export const titleClass = css`
-  font-size: 14px; 
-  color: #000;
+  font-size: 24px; 
+  color: #000000;
   cursor: pointer;
-  background: #000;
-  color: ${theme.colors.white};
   padding: 0px 15px 15px 15px;
   font-weight: 500;
+
+  a:hover & {
+    color: rgba(15,15,15,.7);
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    font-size: 18px; 
+  }
 `;
 
 export const dateClass = css`
   font-size: 12px; 
-  color: #000;
   cursor: pointer;
-  background: #000;
-  color: ${theme.colors.white};
+  color: #000000;
   padding: 15px 15px 10px 15px;
   font-weight: 700;
-  text-align: center;
+
+  a:hover & {
+    color: rgba(15,15,15,.7);
+  }
+
 `;
 
 export const episodeContainerClass = css`
-  width: 28%;
   margin: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(15,15,15,.8);
   cursor: pointer;
+  display: flex;
 
-  img {
-    width: 100%;
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    margin: 5px 0;
+    padding-bottom: 10px;
+  }
+
+  img, .gatsby-image-wrapper {
+    width: 120px;
+    min-width: 120px;
     cursor: pointer;
+    align-self: center;
+
+    @media only screen and (max-width: ${theme.breakpoints.small}) {
+      width: 80px;
+      min-width: 80px;
+    }
   }
 
   a {
-    text-decoration: none;
     display: flex;
     flex-direction: column;
   }
+  
+`;
 
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
-    width: 80%;
-  }
+export const infoClass = css`
+  display: flex;
+  flex-direction: column;
 `;
