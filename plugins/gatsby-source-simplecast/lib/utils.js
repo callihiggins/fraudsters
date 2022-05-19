@@ -1,4 +1,4 @@
-const mapObject = require('./mapObj');
+const mapObj = require('map-obj');
 
 const Cache = require('quick-lru');
 
@@ -24,7 +24,7 @@ function camelCaseKeys(input, options) {
     const {
       exclude
     } = options;
-    return mapObject(input, (key, value) => {
+    return mapObj(input, (key, value) => {
       if (!(exclude && exclude.some(x => typeof x === 'string' ? x === key : x.test(key)))) {
         if (cache.has(key)) {
           key = cache.get(key);
