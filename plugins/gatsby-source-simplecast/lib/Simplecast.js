@@ -1,8 +1,7 @@
 const fetch = require('node-fetch');
 
 const {
-  unSlashIt,
-  camelCaseKeys
+  unSlashIt
 } = require('./utils');
 
 class Simplecast {

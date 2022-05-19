@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { unSlashIt, camelCaseKeys } = require('./utils');
+const { unSlashIt } = require('./utils');
 
 class Simplecast {
   constructor({ token, podcastId }) {
