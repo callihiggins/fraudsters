@@ -1,4 +1,4 @@
-const { createNodeHelpers } = import('gatsby-node-helpers');
+const { createNodeHelpers } = require('gatsby-node-helpers');
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const Simplecast = require('./lib/Simplecast');
 const { createNodeFactory } = createNodeHelpers({ typePrefix: `Simplecast` });
