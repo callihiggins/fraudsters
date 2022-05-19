@@ -18,6 +18,7 @@ function camelCase(str) {
 }
 
 function camelCaseKeys(input, options) {
+  console.log(input)
   const camelCaseConvert = (input, options) => {
     options = {
       deep: false,
