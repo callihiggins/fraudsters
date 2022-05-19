@@ -5,7 +5,8 @@ export const titleClass = css`
   font-size: 24px; 
   color: #000000;
   cursor: pointer;
-  padding: 0px 15px 15px 15px;
+  padding: 0px 15px;
+  justify-self: center;
   font-weight: 500;
 
   a:hover & {
@@ -21,7 +22,7 @@ export const dateClass = css`
   font-size: 12px; 
   cursor: pointer;
   color: #000000;
-  padding: 15px 15px 10px 15px;
+  padding: 0 15px 10px 15px;
   font-weight: 700;
 
   a:hover & {
