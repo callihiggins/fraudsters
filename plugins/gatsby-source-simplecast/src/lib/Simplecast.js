@@ -40,7 +40,7 @@ class Simplecast {
     return this.request(`episodes/${this.podcastId}/episodes`)
       .then(res => res.json())
       .then(data => {
-        throw Error(data)
+        throw Error(data)})
       //  camelCaseKeys(data, { deep: true })})
       .catch(console.error);
   };
@@ -52,7 +52,7 @@ class Simplecast {
     return this.request(`episodes/${episodeId}/keywords`)
       .then(res => res.json())
       .then(data => {
-        throw Error(data)
+        throw Error(data)})
       //  camelCaseKeys(data, { deep: true })})
       .catch(console.error);
   };
@@ -73,7 +73,7 @@ class Simplecast {
     })
       .then(res => res.json())
       .then(data => {
-        throw Error(data)
+        throw Error(data)})
       //  camelCaseKeys(data, { deep: true })})
       .catch(() => { throw Error(error) });;
   }
@@ -82,7 +82,7 @@ class Simplecast {
     return this.request(`podcasts/${this.podcastId}`)
       .then(res => res.json())
       .then(data => {
-        throw Error(data)
+        throw Error(data)})
       //  camelCaseKeys(data, { deep: true })})
       .catch(() => { throw Error(error) });;
   };
