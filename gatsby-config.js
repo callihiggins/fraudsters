@@ -16,6 +16,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-fontawesome-css", 
     "gatsby-plugin-recaptcha",
+    "gatsby-plugin-netlify",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
