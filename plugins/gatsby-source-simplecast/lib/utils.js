@@ -1,4 +1,4 @@
-const mapObj = require('./map-obj');
+const mapObj = require('./mapObj');
 const Cache = require('quick-lru');
 const cache = new Cache({ maxSize: 100000 });
 
