@@ -1,5 +1,5 @@
 const mapObj = import('map-obj');
-const Cache = import('quick-lru');
+const Cache = require('quick-lru');
 const cache = new Cache({ maxSize: 100000 });
 
 /**
