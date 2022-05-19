@@ -7,7 +7,7 @@ const isObjectCustom = value =>
 	&& !(value instanceof Error)
 	&& !(value instanceof Date);
 
-export const mapObjectSkip = Symbol('mapObjectSkip');
+const mapObjectSkip = Symbol('mapObjectSkip');
 
 const _mapObject = (object, mapper, options, isSeen = new WeakMap()) => {
 	options = {
