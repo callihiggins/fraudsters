@@ -69,14 +69,14 @@ class Simplecast {
     })
       .then(res => res.json())
       .then(data => camelCaseKeys(data, { deep: true }))
-      .catch(console.error);;
+      .catch(() => { throw Error(error) });;
   }
 
   getShowInfo = () => {
     return this.request(`podcasts/${this.podcastId}`)
       .then(res => res.json())
       .then(data => camelCaseKeys(data, { deep: true }))
-      .catch(console.error);
+      .catch(() => { throw Error(error) });;
   };
 
   getEpisodes = (limit = 10) => {
@@ -88,7 +88,7 @@ class Simplecast {
       .then(res => res.json())
       .then(info => info.collection)
       .then(data => camelCaseKeys(data, { deep: true }))
-      .catch(console.error);
+      .catch(() => { throw Error(error) });;
   };
 }
 
