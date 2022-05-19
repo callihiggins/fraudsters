@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { unSlashIt } = require('./utils');
+const { unSlashIt, camelCaseKeys } = require('./utils');
 
 class Simplecast {
   constructor({ token, podcastId }) {
@@ -39,10 +39,8 @@ class Simplecast {
     }
     return this.request(`episodes/${this.podcastId}/episodes`)
       .then(res => res.json())
-      .then(data => {
-        throw Error(data)})
-      //  camelCaseKeys(data, { deep: true })})
-      .catch(console.error);
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch((error) => {throw Error(error)});
   };
 
   getEpisodeKeywords = episodeId => {
@@ -51,10 +49,8 @@ class Simplecast {
     }
     return this.request(`episodes/${episodeId}/keywords`)
       .then(res => res.json())
-      .then(data => {
-        throw Error(data)})
-      //  camelCaseKeys(data, { deep: true })})
-      .catch(console.error);
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch((error) => {throw Error(error)});
   };
 
   getEpisodeSearchData = slug => {
@@ -72,19 +68,15 @@ class Simplecast {
       body: JSON.stringify(payload)
     })
       .then(res => res.json())
-      .then(data => {
-        throw Error(data)})
-      //  camelCaseKeys(data, { deep: true })})
-      .catch(() => { throw Error(error) });;
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch((error) => {throw Error(error)});
   }
 
   getShowInfo = () => {
     return this.request(`podcasts/${this.podcastId}`)
       .then(res => res.json())
-      .then(data => {
-        throw Error(data)})
-      //  camelCaseKeys(data, { deep: true })})
-      .catch(() => { throw Error(error) });;
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch((error) => {throw Error(error)});
   };
 
   getEpisodes = (limit = 10) => {
@@ -95,10 +87,8 @@ class Simplecast {
     )
       .then(res => res.json())
       .then(info => info.collection)
-      .then(data => {
-        throw new Error(data)})
-      //  camelCaseKeys(data, { deep: true })})
-      .catch(() => { throw Error(error) });;
+      .then(data => camelCaseKeys(data, { deep: true }))
+      .catch((error) => {throw Error(error)});
   };
 }
 

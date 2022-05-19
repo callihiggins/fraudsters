@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 
 const {
-  unSlashIt
+  unSlashIt,
+  camelCaseKeys
 } = require('./utils');
 
 class Simplecast {
@@ -47,20 +48,22 @@ class Simplecast {
       throw Error('No episode ID provided.');
     }
 
-    return this.request(`episodes/${this.podcastId}/episodes`).then(res => res.json()).then(data => {
-      throw Error(data);
-    }) //  camelCaseKeys(data, { deep: true })})
-    .catch(console.error);
+    return this.request(`episodes/${this.podcastId}/episodes`).then(res => res.json()).then(data => camelCaseKeys(data, {
+      deep: true
+    })).catch(error => {
+      throw Error(error);
+    });
   };
   getEpisodeKeywords = episodeId => {
     if (!episodeId) {
       throw Error('No episode ID provided.');
     }
 
-    return this.request(`episodes/${episodeId}/keywords`).then(res => res.json()).then(data => {
-      throw Error(data);
-    }) //  camelCaseKeys(data, { deep: true })})
-    .catch(console.error);
+    return this.request(`episodes/${episodeId}/keywords`).then(res => res.json()).then(data => camelCaseKeys(data, {
+      deep: true
+    })).catch(error => {
+      throw Error(error);
+    });
   };
   getEpisodeSearchData = slug => {
     if (!slug) {
@@ -75,31 +78,25 @@ class Simplecast {
       headers: this.headers,
       cache: 'default',
       body: JSON.stringify(payload)
-    }).then(res => res.json()).then(data => {
-      throw Error(data);
-    }) //  camelCaseKeys(data, { deep: true })})
-    .catch(() => {
+    }).then(res => res.json()).then(data => camelCaseKeys(data, {
+      deep: true
+    })).catch(error => {
       throw Error(error);
     });
-    ;
   };
   getShowInfo = () => {
-    return this.request(`podcasts/${this.podcastId}`).then(res => res.json()).then(data => {
-      throw Error(data);
-    }) //  camelCaseKeys(data, { deep: true })})
-    .catch(() => {
+    return this.request(`podcasts/${this.podcastId}`).then(res => res.json()).then(data => camelCaseKeys(data, {
+      deep: true
+    })).catch(error => {
       throw Error(error);
     });
-    ;
   };
   getEpisodes = (limit = 10) => {
-    return this.request(`podcasts/${this.podcastId}/episodes?limit=${typeof limit === 'number' ? limit : 10}`).then(res => res.json()).then(info => info.collection).then(data => {
-      throw new Error(data);
-    }) //  camelCaseKeys(data, { deep: true })})
-    .catch(() => {
+    return this.request(`podcasts/${this.podcastId}/episodes?limit=${typeof limit === 'number' ? limit : 10}`).then(res => res.json()).then(info => info.collection).then(data => camelCaseKeys(data, {
+      deep: true
+    })).catch(error => {
       throw Error(error);
     });
-    ;
   };
 }
 
