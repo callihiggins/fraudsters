@@ -47,7 +47,8 @@ export const aboutContainerClass = css`
     }
 
     button {
-      padding: 7px 10px;
+      padding: 10px 15px;
+      font-weight: 700;
       background: #000000;
       border-radius: 3px;
       color: ${theme.colors.white};
@@ -178,5 +179,20 @@ export const modalContainerClass = css`
     border: 1px solid #000000;
     font-size: 18px;
     cursor: pointer;
+  }
+`;
+
+export const confirmationContainerClass = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  font-size: 32px;
+
+  span {
+    font-size: 18px;
+    display: block
+    margin-top: 10px;
   }
 `;

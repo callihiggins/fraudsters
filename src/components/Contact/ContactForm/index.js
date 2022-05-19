@@ -7,7 +7,12 @@ import * as styles from '../styled';
 function ContactForm() {
   const [state, handleSubmit] = useForm("xvoldbag");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return (
+        <div className={styles.confirmationContainerClass}>
+          <div className={styles.confirmationClass}>Tip received!</div>
+          <span>We'll be in touch</span>
+        </div>
+      )
   }
   return (
     <div className={styles.modalContainerClass}>
