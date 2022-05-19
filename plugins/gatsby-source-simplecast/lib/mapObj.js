@@ -51,9 +51,18 @@ const _mapObject = (object, mapper, options, isSeen = new WeakMap()) => {
   }
 
   return target;
-};
+}; // function mapObject(object, mapper, options) {
+// 	if (!isObject(object)) {
+// 		throw new TypeError(`Expected an object, got \`${object}\` (${typeof object})`);
+// 	}
+// 	if (Array.isArray(object)) {
+// 		throw new TypeError('Expected an object, got an array');
+// 	}
+// 	return _mapObject(object, mapper, options);
+// }
 
-module.exports = function mapObject(object, mapper, options) {
+
+module.exports.mapObject = function (object, mapper, options) {
   if (!isObject(object)) {
     throw new TypeError(`Expected an object, got \`${object}\` (${typeof object})`);
   }
