@@ -2,6 +2,7 @@
 // For more help visit https://formspr.ee/react-help
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';  
+import Recaptcha from 'react-recaptcha'
 import * as styles from '../styled';
 
 function ContactForm() {
@@ -72,6 +73,9 @@ function ContactForm() {
           field="etc"
           errors={state.errors}
         />
+        <Recaptcha
+          sitekey={process.env.RECAPTCHA_SITE_ID}
+        />,        
         <button type="submit" disabled={state.submitting}>
           Send
         </button>

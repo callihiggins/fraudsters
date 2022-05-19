@@ -15,6 +15,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
     "gatsby-plugin-fontawesome-css", 
+    "gatsby-plugin-recaptcha",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
