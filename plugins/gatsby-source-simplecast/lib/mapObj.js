@@ -69,4 +69,4 @@ function mapObject(object, mapper, options) {
 }
 
 
-module.exports = mapObject;
+module.exports = mapObject();
