@@ -94,7 +94,7 @@ class Simplecast {
   };
   getEpisodes = (limit = 10) => {
     return this.request(`podcasts/${this.podcastId}/episodes?limit=${typeof limit === 'number' ? limit : 10}`).then(res => res.json()).then(info => info.collection).then(data => {
-      throw Error(data);
+      throw new Error(data);
     }) //  camelCaseKeys(data, { deep: true })})
     .catch(() => {
       throw Error(error);
