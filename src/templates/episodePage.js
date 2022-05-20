@@ -22,6 +22,18 @@ function EpisodePage({ pageContext }) {
   const authorsHTML = episode.authors.map(author => 
     <li>{author}</li>
   )
+
+  const imageToShow = () => {
+    if (episode.image) {
+      return <Img fluid={episode.image.childImageSharp.fluid} width="100%" />
+    } else if (episode.imageUrl) {
+      return <Img className={styles.plaeceHolderImageClass} image={episode.imageUrl}/>
+    } else {
+      return false;
+    }
+  }
+
+  const imageHtml = imageToShow();
   return (
     <>
       <div className={styles.pageContainerClass}>
@@ -37,7 +49,7 @@ function EpisodePage({ pageContext }) {
                 <iframe height={ episode.longDescription || episode.description ? '122px' : '250px'} width="100%" frameBorder="no" scrolling="no" title={episode.title} seamless src={`https://player.simplecast.com/${episode.simplecastId}?dark=true&amp;show=true&amp;color=000000`}></iframe>
               </div>
               <div className={styles.imageAndAuthorsClass}>
-                {episode.image ? <Img fluid={episode.image.childImageSharp.fluid} width="100%" /> : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}
+                {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}
                 <div className={cx(styles.authorsClass, styles.hideMobile)}>
                   <strong>Show Contributors</strong>
                   <ul>
