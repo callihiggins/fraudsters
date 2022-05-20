@@ -24,6 +24,7 @@ function camelCaseKeys(input, options) {
     const {
       exclude
     } = options;
+    if (!input) return;
     return mapObject(input, (key, value) => {
       if (!(exclude && exclude.some(x => typeof x === 'string' ? x === key : x.test(key)))) {
         if (cache.has(key)) {

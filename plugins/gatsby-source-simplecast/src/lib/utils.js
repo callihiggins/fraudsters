@@ -25,7 +25,7 @@ function camelCaseKeys(input, options) {
     };
 
     const { exclude } = options;
-
+    if (!input) return;
     return mapObject(
       input,
       (key, value) => {
