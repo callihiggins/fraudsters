@@ -73,9 +73,7 @@ function ContactForm() {
           field="etc"
           errors={state.errors}
         />
-        <Recaptcha
-          sitekey={process.env.RECAPTCHA_SITE_ID}
-        />,        
+        <Recaptcha sitekey="6Lc9PwIgAAAAACn6CwjotBUvXs5hy2C4uNP5JpDn" />,        
         <button type="submit" disabled={state.submitting}>
           Send
         </button>
