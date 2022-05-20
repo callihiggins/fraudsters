@@ -87,7 +87,7 @@ class Simplecast {
     )
       .then(res => res.json())
       .then(info => info.collection)
-      .then(data => camelCaseKeys(data, { deep: true }))
+      .then(data => {throw Error(data)})
       .catch((error) => {throw Error(error)});
   };
 }
