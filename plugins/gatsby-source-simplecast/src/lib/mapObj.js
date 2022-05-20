@@ -66,9 +66,9 @@ function mapObject(object, mapper, options) {
 }
 
 module.exports = (object, mapper, options) => {
-  if (!isObject(object)) {
-    throw new TypeError(`Expected an object, got \`${object}\` (${typeof object})`);
-  }
+	if (!isObject(object)) {
+		throw new TypeError(`Expected an object, got \`${object}\` (${typeof object})`);
+	}
 
-  return mapObject(object, mapper, options);
+	return mapObject(object, mapper, options);
 };
