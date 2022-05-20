@@ -1,14 +1,25 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import placeholder from '../../../images/placeholder.jpg'
+import { StaticImage } from "gatsby-plugin-image"
 import * as styles from './styled';
 
-const Episode = ({ title, publishedAt, slug, image }) => {
+const Episode = ({ title, publishedAt, slug, image, imageUrl }) => {
+  const imageToShow = () => {
+    if (image) {
+      return <Img fluid={image.childImageSharp.fluid} width="100%" />
+    } else if (imageUrl) {
+      return <Img className={styles.plaeceHolderImageClass} image={imageUrl}/>
+    } else {
+      return false;
+    }
+  }
+
+  const imageHtml = imageToShow();
   return (
     <div className={styles.episodeContainerClass}>
       <Link to={`./${slug}`}>
-        {image ? <Img fluid={image.childImageSharp.fluid} width="100%" /> : <img src={placeholder}/>}
+        {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../../../images/placeholder.jpg"/>}
         <div className={styles.dateClass}>{publishedAt}</div>
         <div className={styles.titleClass}>{title}</div>
       </Link>

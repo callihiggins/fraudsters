@@ -14,8 +14,8 @@ const Episodes = ({ episodesData }) => {
         <Nav />
         <h1 className={styles.pageTitleClass}>Episodes</h1>
         <div className={styles.episodesContainerClass}>
-          {episodesData.map(({ node: { title, publishedAt, image, slug, description }}, idx) => 
-            <Episode key={idx} title={title} publishedAt={publishedAt} description={description} slug={slug} image={image} />
+          {episodesData.map(({ node: { title, publishedAt, image, imageUrl, slug, description }}, idx) => 
+            <Episode key={idx} title={title} publishedAt={publishedAt} imageUrl={imageUrl} description={description} slug={slug} image={image} />
           )}
         </div>
         <Footer />
