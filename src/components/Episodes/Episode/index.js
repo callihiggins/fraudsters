@@ -5,11 +5,12 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as styles from './styled';
 
 const Episode = ({ title, publishedAt, slug, image, imageUrl }) => {
+
   const imageToShow = () => {
     if (image) {
       return <Img fluid={image.childImageSharp.fluid} width="100%" />
     } else if (imageUrl) {
-      return <Img className={styles.plaeceHolderImageClass} image={imageUrl}/>
+      return <img className={styles.plaeceHolderImageClass} src={imageUrl}/>
     } else {
       return false;
     }
