@@ -179,6 +179,7 @@ export const modalContainerClass = css`
     border: 1px solid #000000;
     font-size: 18px;
     cursor: pointer;
+    margin-top: 25px;
   }
 `;
 

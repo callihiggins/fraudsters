@@ -28,13 +28,13 @@
     "url": "https://github.com/chancestrickland/gatsby-source-simplecast/issues"
   },
   "peerDependencies": {
-    "gatsby": "^2.0.0",
+    "gatsby": "^4.0.0",
     "gatsby-source-filesystem": "^2.3.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "gatsby-node-helpers": "^0.3.0",
-    "map-obj": "^4.1.0",
+    "map-obj": "4.1.0",
     "node-fetch": "^2.6.0",
     "quick-lru": "^4.0.1"
   },
@@ -46,10 +46,10 @@
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
-    "gatsby-source-filesystem": "^2.3.0",
     "eslint-plugin-jest": "^23.2.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "gatsby-source-filesystem": "^2.3.0",
     "jest": "^24.9.0",
     "jest-fetch-mock": "^3.0.1",
     "prettier": "^1.19.1"
