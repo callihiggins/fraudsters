@@ -22,12 +22,14 @@ function EpisodePage({ pageContext }) {
   const authorsHTML = episode.authors.map(author => 
     <li>{author}</li>
   )
+  debugger;
+
 
   const imageToShow = () => {
     if (episode.image) {
       return <Img fluid={episode.image.childImageSharp.fluid} width="100%" />
     } else if (episode.imageUrl) {
-      return <Img className={styles.plaeceHolderImageClass} image={episode.imageUrl}/>
+      return <img className={styles.plaeceHolderImageClass} src={episode.imageUrl}/>
     } else {
       return false;
     }
