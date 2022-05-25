@@ -10,7 +10,6 @@ const Home = () => {
 
   return (
     <>
-      <PageHelmet />
       <main className={styles.mainContainerClass}>
         <div className={styles.headerClass}>
           <h1 className={styles.titleClass}>Fraudsters</h1>

@@ -6,6 +6,7 @@ import { faSpinner, faPlus, faMinus, faEnvelope, faTimes } from '@fortawesome/fr
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 import Home from '../components/Home';
+import PageHelmet from '../components/PageHelmet';
 import "./base.css"
 
 library.add(fab, faSpinner, faPlus, faMinus, faEnvelope, faTimes);
@@ -13,7 +14,10 @@ library.add(fab, faSpinner, faPlus, faMinus, faEnvelope, faTimes);
 
 const IndexPage = () => {
   return (
-    <Home />
+    <>
+      <PageHelmet/>
+      <Home />
+    </>
   )
 }
 
