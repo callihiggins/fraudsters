@@ -44,15 +44,6 @@ export const About = () =>
             <a href="https://www.amazon.com/gp/product/B075ZL7R1X/ref=dm_ws_sp_ps_dp" target="_blank" rel="noopener noreferrer" className={styles.iconClass}><FontAwesomeIcon icon={solid('headphones')} /></a>
           </div>
         </div>
-        <div className={styles.personClass}>
-          <StaticImage src='../../images/hazel.jpeg' alt="Hazel Leezah" />
-          <div className={styles.bioClass}>
-          <div className={styles.quoteClass}>
-                “I’m Hazel.”
-              </div>
-              <div className={styles.nameClass}>— Hazel, Producer</div>
-          </div>
-        </div>
       </div>
     </div>
     <Footer />

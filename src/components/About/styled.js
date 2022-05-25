@@ -23,7 +23,7 @@ export const pageTitleClass = css`
 
 export const containerClass = css`
   background-color: ${theme.colors.yellow};
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   gap: 40px;
@@ -38,7 +38,7 @@ export const personClass = css`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: calc(30% - 20px);
+  width: calc(40% - 20px);
   padding-bottom: 20px;
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     width: 100%;
