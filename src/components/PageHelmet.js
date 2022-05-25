@@ -1,5 +1,8 @@
 import * as React from "react"
 import { Helmet } from 'react-helmet';
+import SITE_IMAGE from '../images/icon.png'
+
+
 
 const PageHelmet = ({ keywords, title, description, image }) => {
   let PAGE_TITLE = 'Fraudsters: The True-Crime, Comedy Podcast';
@@ -10,7 +13,7 @@ const PageHelmet = ({ keywords, title, description, image }) => {
   PAGE_KEYWORDS = keywords ? PAGE_KEYWORDS.concat(keywords) : PAGE_KEYWORDS;
   PAGE_TITLE = title ? title : PAGE_TITLE; 
   PAGE_DESCRIPTION = description ? description : PAGE_DESCRIPTION
-  const SOCIAL_IMAGE = image ? image : '../images/icon.png';
+  const SOCIAL_IMAGE = image ? image : SITE_IMAGE;
   return (
     <>
       <Helmet title={PAGE_TITLE}>
