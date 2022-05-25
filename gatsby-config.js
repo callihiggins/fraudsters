@@ -18,12 +18,6 @@ module.exports = {
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl: `https://fraudsters.fm`,
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "images",
