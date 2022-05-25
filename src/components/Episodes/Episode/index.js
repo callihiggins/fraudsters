@@ -20,14 +20,13 @@ const Episode = ({ title, publishedAt, slug, image, imageUrl }) => {
   return (
     <Link to={`./${slug}`}>
       <div className={styles.episodeContainerClass}>
-        {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../../../images/placeholder.jpg"/>}
+        {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../../../images/s2-coverart.jpg"/>}
         <div className={styles.infoClass}>
           <div className={styles.dateClass}>{publishedAt}</div>
           <div className={styles.titleClass}>{title}</div>
         </div>
       </div>
     </Link>
-
   )
 }
 

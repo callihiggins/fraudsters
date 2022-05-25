@@ -4,19 +4,25 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Fraudssters`,
+    siteUrl: `https://fraudsters.fm`
   },
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
     "gatsby-plugin-fontawesome-css", 
     "gatsby-plugin-recaptcha",
     "gatsby-plugin-netlify",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://fraudsters.fm`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
