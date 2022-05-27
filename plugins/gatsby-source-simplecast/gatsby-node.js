@@ -63,37 +63,3 @@ exports.sourceNodes = async ({
     console.error('FAIL:', err);
   }
 };
-
-const nodeWithImage = ['SimplecastPodcastEpisode'];
-
-exports.onCreateNode = async ({
-  node,
-  actions,
-  store,
-  cache,
-  createNodeId
-}) => {
-  if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
-    const fileNode = await createRemoteFileNode({
-      url: node.imageUrl,
-      parentNodeId: node.id,
-      createNode: actions.createNode,
-      createNodeId,
-      cache,
-      store
-    });
-
-    if (fileNode) {
-      node.image___NODE = fileNode.id;
-    }
-  }
-};
-
-exports.createSchemaCustomization = ({
-  actions,
-  schema
-}) => {
-  actions.createTypes(`type SimplecastPodcastEpisode implements Node {
-      image: File @link(from: "image___NODE")
-    }`);
-};

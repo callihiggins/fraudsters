@@ -22,16 +22,7 @@ function EpisodePage({ pageContext }) {
   const authorsHTML = episode.authors.map(author => 
     <li>{author}</li>
   )
-
-  const imageToShow = () => {
-    if (episode.image) {
-      return <Img fluid={episode.image.childImageSharp.fluid} width="100%" />
-    } else {
-      return false;
-    }
-  }
-
-  const imageHtml = imageToShow();
+  
   return (
     <>
       <div className={styles.pageContainerClass}>
@@ -46,7 +37,7 @@ function EpisodePage({ pageContext }) {
                 <div className={styles.descriptionClass} dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}></div>
               </div>
               <div className={styles.imageAndAuthorsClass}>
-                {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}
+                {episode.image ? <Img fluid={episode.image.childImageSharp.fluid} width="100%" /> : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}
                 <div className={cx(styles.authorsClass, styles.hideMobile)}>
                   <strong>Show Contributors</strong>
                   <ul>
