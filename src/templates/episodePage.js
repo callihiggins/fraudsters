@@ -26,8 +26,6 @@ function EpisodePage({ pageContext }) {
   const imageToShow = () => {
     if (episode.image) {
       return <Img fluid={episode.image.childImageSharp.fluid} width="100%" />
-    } else if (episode.imageUrl) {
-      return <img className={styles.plaeceHolderImageClass} src={episode.imageUrl}/>
     } else {
       return false;
     }
