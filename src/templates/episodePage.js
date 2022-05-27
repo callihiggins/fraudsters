@@ -22,8 +22,6 @@ function EpisodePage({ pageContext }) {
   const authorsHTML = episode.authors.map(author => 
     <li>{author}</li>
   )
-  debugger;
-
 
   const imageToShow = () => {
     if (episode.image) {
@@ -46,9 +44,8 @@ function EpisodePage({ pageContext }) {
             <div className={styles.imageAndPlayerClass}>
               <div className={styles.descriptionAndPlayerClass({ hasDescription : episode.longDescription || episode.description })} >
                 <div className={styles.publishedDateClass}>{episode.publishedAt} | <FontAwesomeIcon icon={regular('clock')} /> {formattedTime}</div>
-                  <div className={styles.descriptionClass} dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}>
-                </div>
                 <iframe height={ episode.longDescription || episode.description ? '122px' : '250px'} width="100%" frameBorder="no" scrolling="no" title={episode.title} seamless src={`https://player.simplecast.com/${episode.simplecastId}?dark=true&amp;show=true&amp;color=000000`}></iframe>
+                <div className={styles.descriptionClass} dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}></div>
               </div>
               <div className={styles.imageAndAuthorsClass}>
                 {imageHtml ? imageHtml : <StaticImage className={styles.plaeceHolderImageClass} src="../images/s2-coverart.jpg"/>}

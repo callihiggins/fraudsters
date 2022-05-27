@@ -26,6 +26,7 @@ export const episodeContainerClass = css`
   width: 28%;
   margin: 20px;
   cursor: pointer;
+  background: #000000;
 
   img {
     width: 100%;
