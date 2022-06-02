@@ -1,12 +1,28 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import PageHelmet from '../PageHelmet';
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image';
 import Footer from '../Footer';
 import MobileNav from '../Nav/MobileNav';
 import isolatedDrawing from '../../images/isolatedDrawing.png';
 import * as styles from './styled';
 
 const Home = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "isolatedDrawing.png" }) {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 1800) {
+            aspectRatio
+            src
+            srcSet
+            sizes
+          }
+        }
+      }
+    }`
+  )
 
   return (
     <>
@@ -31,7 +47,7 @@ const Home = () => {
           <iframe title="Fraudsters Episodes" frameborder="no" scrolling="no" seamless="" src="https://player.simplecast.com/3efcc19a-e279-40af-9726-47a519956c3f?dark=true&amp;show=true&amp;color=000000"></iframe>
         </div>
         <div className={styles.drawingClass}>
-          <img src={isolatedDrawing} alt="Seena and Justin" />
+          <Img fluid={data.image.childImageSharp.fluid} width="100%" alt="Seena and Justin" />
         </div>
       </main>
       <Footer />

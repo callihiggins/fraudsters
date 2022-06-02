@@ -37,34 +37,28 @@ export const titleClass = css`
 
 export const drawingClass = css`
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   right: 40px;
-  display: flex;
-  justify-content: flex-end;
+  width: 79vh;
+  height: 75vh;
+  max-width: 700px;
+  max-height: 666px;
 
-  img {
-    width: auto;
-    height: 75vh;
-    max-width: 700px;
-    max-height: 666px;
-  }
 
   @media only screen and (max-width: ${theme.breakpoints.medium}) {
-    img {
-      height: auto;
-      width: 80%;
-    }
+    height: auto;
+    width: 55%;
+    right: 20px;
+    bottom: 0;
   }
 
   @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
-    img {
-      width: 65%;
-    }
+    width: 50%;
   }
 
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
-    display: none;
+    display: none  !important;
   }
 `;
 
