@@ -78,7 +78,7 @@ export const linksContainer = css`
 `;
 
 export const socialMediaIconsClass = css`
-   width: 140px;
+   width: 180px;
    display: flex;
    justify-content: space-between;
    padding-left: 15px;

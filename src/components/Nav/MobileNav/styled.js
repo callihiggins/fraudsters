@@ -29,7 +29,7 @@ export const socialMediaIconsClass = css`
 
 export const iconClass = css`
   color: ${theme.colors.white};
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
 `;
 
