@@ -7,14 +7,14 @@ const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
 export const mainContainerClass = css`
   background-color: ${theme.colors.yellow};
-  height: calc(100vh - ${theme.componentsHeight.footer});
+  height: calc(100vh - ${theme.componentsHeight.footer}) !important;
   width: 100vw;
   position: relative;
 
   @media only screen and (max-width: ${theme.breakpoints.small}) {
     height: auto;
     width: 100%;
-    min-height: calc(100vh - ${theme.componentsHeight.footer});
+    min-height: calc(100vh - ${theme.componentsHeight.footer}) !important;
   }
 `;
 
@@ -193,3 +193,13 @@ export const hideDesktop = css`
     display: block;
   }
 `;
+
+export const footerClass = css`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  @media only screen and (max-width: ${theme.breakpoints.small}) {
+    position: relative;
+  }
+`;  
