@@ -48,5 +48,11 @@ module.exports = {
         maxVideos: 50 // Defaults to 50
       },
     },
+    {
+    resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_TRACKING_ID],
+      }
+    }
   ]
 };
