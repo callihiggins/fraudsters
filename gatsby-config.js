@@ -40,5 +40,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-youtube-v3`,
+      options: {
+        channelId: ['UCQwl8sDTVEAxhwJdYgm-yrg'],
+        apiKey: process.env.YOUTUBE_KEY,
+        maxVideos: 50 // Defaults to 50
+      },
+    },
   ]
 };
