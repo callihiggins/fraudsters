@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { cx } from '@emotion/css';
 import Img from 'gatsby-image';
 import ReactFullpage from '@fullpage/react-fullpage'; 
+import YouTube from './YouTube';
 import Footer from '../Footer';
 import MobileNav from '../Nav/MobileNav';
 import isolatedDrawing from '../../images/isolatedDrawing.png';
@@ -23,9 +24,16 @@ const Home = () => {
           }
         }
       }
+      allYoutubeVideo {
+        edges {
+          node {
+            title
+            videoId
+          }
+        }
+      }
     }`
   )
-
   return (
     <>
       <ReactFullpage
@@ -64,7 +72,11 @@ const Home = () => {
 
 
               <section className="section">
-                social
+                <div className={styles.youtubeContainer}>
+                  {data.allYoutubeVideo.edges.map(({node}) =>
+                    <YouTube videoId={node.videoId} videoTitle={node.title} />
+                  )}
+                </div>
               </section>
 
 
