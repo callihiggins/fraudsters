@@ -13,6 +13,7 @@ export const pageTitleClass = {
 
   '@media only screen and (max-width:800px)': {
     marginBottom: '10px',
+    fontSize: '24px',
   }
 }
 
