@@ -15,7 +15,11 @@ export const footerClass = {
 
 export const logoClass = {
   width: '75px',
-}
+
+  "@media only screen and (max-width: 800px)" : {
+    width: '60px'
+  }
+} 
 
 export const rightSideClass = {
   display: 'flex',
@@ -28,6 +32,10 @@ export const leftSideClass = {
   justifyContent: 'space-between',
   width: '180px',
   alignItems: 'center',
+
+  "@media only screen and (max-width: 800px)" : {
+    width: '130px',
+  }
 }
 
 export const socialMediaIconsClass = {
@@ -45,7 +53,7 @@ export const iconClass = {
 export const followClass = {
   marginRight: '20px',
   '@media (max-width: 1200px)' : {
-    margin: '10px 20px 10px 0',
+    margin: '0 20px 10px 0',
   }
 }
 

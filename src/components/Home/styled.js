@@ -32,6 +32,7 @@ export const titleClass = {
     color: `${theme.colors.yellow}`,
     padding: '20px 0 0 20px',
     width: '200px',
+    position: 'fixed'
   }
 }
 
@@ -120,7 +121,7 @@ export const mobileImageClass = {
   "@media only screen and (max-width: 800px)" : {
     display: 'block',
     textAlign: 'center',
-    padding: '40px 0 20px 0',
+    padding: '90px 0 20px 0',
     img : {
       width: '60%',
     }

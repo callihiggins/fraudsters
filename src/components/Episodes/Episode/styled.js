@@ -40,6 +40,7 @@ export const episodeContainerClass = {
   },
 
   '@media only screen and (max-width: 800px)': {
-    width: '80%',
+    width: '100%',
+    margin: '20px 0'
   }
 }

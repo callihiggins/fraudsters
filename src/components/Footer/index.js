@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <footer css={styles.footerClass}>
       <div css={styles.leftSideClass}>
-        <StaticImage width={70} layout="fixed" src='../../images/zerocool.png' css={styles.logoClass} alt="Zero Cool"/>
-        <StaticImage width={70} layout="fixed" src='../../images/lastPodcastNetwork.jpg' css={styles.logoClass} alt="Last Podcast Network"/>
+      <OutboundLink href="http://zerocool.tv" target="_blank" rel="noopener noreferrer" ><StaticImage  src='../../images/zerocool.png' css={styles.logoClass} alt="Zero Cool"/></OutboundLink>
+      <OutboundLink href="https://www.lastpodcastnetwork.com/" target="_blank" rel="noopener noreferrer" ><StaticImage  src='../../images/lastPodcastNetwork.jpg' css={styles.logoClass} alt="Last Podcast Network"/></OutboundLink>
         {/* <div css={styles.copyrightClass}>&copy; Fraudsters 2022</div> */}
       </div>
       <div css={styles.rightSideClass}>
