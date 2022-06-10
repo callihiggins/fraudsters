@@ -8,7 +8,6 @@ module.exports = {
     siteUrl: `https://fraudsters.fm`
   },
   plugins: [
-    "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -17,6 +16,17 @@ module.exports = {
     "gatsby-plugin-recaptcha",
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+        // The values for each key in this example are the defaults the plugin uses.
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

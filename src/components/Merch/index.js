@@ -373,9 +373,9 @@ export const Merch = () =>
   <>
     <PageHelmet />
     <Nav />
-    <div className={styles.pageContainerClass}>
-      <h1 className={styles.pageTitleClass}>Snag Some Fraudsters Swag</h1>
-      <div className={styles.containerClass}>
+    <div css={styles.pageContainerClass}>
+      <h1 css={styles.pageTitleClass}>Snag Some Fraudsters Swag</h1>
+      <div css={styles.containerClass}>
         <InnerHTML html={html} />
       </div>
     </div>

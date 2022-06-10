@@ -11,7 +11,7 @@ function ContactForm() {
       return <p>Thanks for joining!</p>;
   }
   return (
-    <div className={styles.modalContainerClass}>
+    <div css={styles.modalContainerClass}>
       <h2>Got a story? Tell us!</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="who">
@@ -45,7 +45,7 @@ function ContactForm() {
         />
         <label htmlFor="email">
           Email to contact you*
-          <span className={styles.subLabelClass}>Feel free to remain anonymous. We get it, no one wants to piss off a fraudster.</span>
+          <span css={styles.subLabelClass}>Feel free to remain anonymous. We get it, no one wants to piss off a fraudster.</span>
         </label>
         <input
           id="email"
