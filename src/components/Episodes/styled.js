@@ -1,28 +1,28 @@
 import { css } from '@emotion/css';
 import { default as theme } from '../../theme';
 
-export const pageContainerClass = css`
-  background-color: ${theme.colors.yellow};
-  padding-top: ${theme.componentsHeight.nav};
-`;
+export const pageContainerClass = {
+  backgroundColor: `${theme.colors.yellow}`,
+  paddingTop: `${theme.componentsHeight.nav}`,
+}
 
-export const pageTitleClass = css`
-  text-align: center;
-  font-family: ${theme.fonts.upAway};
-  margin: 10px 0;
-  font-size: 72px;
-  padding: 20px;
+export const pageTitleClass = {
+  textAlign: 'center',
+  fontFamily: `${theme.fonts.upAway}`,
+  margin: '10px 0',
+  fontSize: '72px',
+  padding: '20px',
 
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
-    width: 80%;
-    font-size: 48px;
+  '@media only screen and (max-width: 800px)': {
+    width: '80%',
+    fontSize: '48px',
   }
-`;
+}
 
-export const episodesContainerClass = css`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 80%;
-  margin: 0 auto;
-`;
+export const episodesContainerClass = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-around',
+  width: '80%',
+  margin: '0 auto',
+}

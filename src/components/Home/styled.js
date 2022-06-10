@@ -145,7 +145,7 @@ export const navClass = {
     display: 'none',
   },
 
-  a : {
+  a: {
     cursor: 'pointer',
     position: 'relative',
     display: 'block',

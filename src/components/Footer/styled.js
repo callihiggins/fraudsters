@@ -44,7 +44,7 @@ export const iconClass = {
 
 export const followClass = {
   marginRight: '20px',
-  '@media (max-width: ${theme.breakpoints.medium}px)' : {
+  '@media (max-width: 1200px)' : {
     margin: '10px 20px 10px 0',
   }
 }

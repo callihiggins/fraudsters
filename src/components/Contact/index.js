@@ -27,9 +27,9 @@ export const Contact = () => {
     <>
       <PageHelmet />
       <Nav />
-      <div className={styles.pageContainerClass}>
-        <h1 className={styles.pageTitleClass}>Say Hi</h1>
-        <div className={styles.aboutContainerClass}>
+      <div css={styles.pageContainerClass}>
+        <h1 css={styles.pageTitleClass}>Say Hi</h1>
+        <div css={styles.aboutContainerClass}>
           <section>
             <h2>Who should we cover next? Tell us!</h2>
             <button onClick={openModal}>Fraudster Referral Form</button>
@@ -41,7 +41,7 @@ export const Contact = () => {
               overlayClassName='overlayClass'
               className='contentClass'
             >
-              <button className={styles.closeButton} onClick={closeModal}><FontAwesomeIcon icon={solid('x')} /> </button>
+              <button css={styles.closeButton} onClick={closeModal}><FontAwesomeIcon icon={solid('x')} /> </button>
               <ContactForm />
             </Modal>
           </section>

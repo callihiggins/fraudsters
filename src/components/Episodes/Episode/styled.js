@@ -1,45 +1,45 @@
 import { css } from '@emotion/css';
 import { default as theme } from '../../../theme';
 
-export const titleClass = css`
-  font-size: 14px; 
-  color: #000;
-  cursor: pointer;
-  background: #000;
-  color: ${theme.colors.white};
-  padding: 0px 15px 15px 15px;
-  font-weight: 500;
-`;
+export const titleClass = {
+  fontSize: '14px', 
+  color: '#000',
+  cursor: 'pointer',
+  background: '#000',
+  color: `${theme.colors.white}`,
+  padding: '0px 15px 15px 15px',
+  fontWeight: '500',
+}
 
-export const dateClass = css`
-  font-size: 12px; 
-  color: #000;
-  cursor: pointer;
-  background: #000;
-  color: ${theme.colors.white};
-  padding: 15px 15px 10px 15px;
-  font-weight: 700;
-  text-align: center;
-`;
+export const dateClass = {
+  fontSize: '12px', 
+  color: '#000',
+  cursor: 'pointer',
+  background: '#000',
+  color: `${theme.colors.white}`,
+  padding: '15px 15px 10px 15px',
+  fontWeight: '700',
+  textAlign: 'center',
+}
 
-export const episodeContainerClass = css`
-  width: 28%;
-  margin: 20px;
-  cursor: pointer;
-  background: #000000;
+export const episodeContainerClass = {
+  width: '28%',
+  margin: '20px',
+  cursor: 'pointer',
+  background: '#000000',
 
-  img {
-    width: 100%;
-    cursor: pointer;
+  img: {
+    width: '100%',
+    cursor: 'pointer',
+  },
+
+  a: {
+    textDecoration: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+
+  '@media only screen and (max-width: 800px)': {
+    width: '80%',
   }
-
-  a {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
-    width: 80%;
-  }
-`;
+}

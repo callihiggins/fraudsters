@@ -11,7 +11,7 @@ export const pageTitleClass = css`
   font-family: ${theme.fonts.upAway};
   margin-top: 10px;
 
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
+  @media only screen and (max-width: 800px) {
     margin-bottom: 10px;
   }
 `;
@@ -31,7 +31,7 @@ export const episodeContainerClass = css`
   margin: 0 auto;
   font-size: 18px;
 
-  @media only screen and (max-width: ${theme.breakpoints.medium}) {
+  @media only screen and (max-width: 1200px) {
     width: 90%;
   }
 `;
@@ -47,7 +47,7 @@ export const imageAndPlayerClass = css`
     align-self: center;
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  @media only screen and (max-width: 1020px) {
     flex-wrap: wrap;
     img {
       width: 75%;
@@ -76,7 +76,7 @@ export const episodeNavClass = css`
     color: #000000;
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.small}) {
+  @media only screen and (max-width: 800px) {
     width: 115px;
   }
 
@@ -96,14 +96,14 @@ export const episodeNavInfoClass = css`
 `;
 
 export const hideMobile = css`
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  @media only screen and (max-width: 1020px) {
     display: none;
   }
 `;
 
 export const hideDesktop = css`
   display: none;
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  @media only screen and (max-width: 1020px) {
     display: block;
   }
 `;
@@ -119,7 +119,7 @@ export const descriptionAndPlayerClass = props => css`
   width: calc(70% - 20px);
   gap: 20px;
 
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  @media only screen and (max-width: 1020px) {
     width: 100%;
     margin: 0 auto;
     order: 2;
@@ -149,7 +149,7 @@ export const imageAndAuthorsClass = css`
   width: 30%;
   gap: 20px;
 
-  @media only screen and (max-width: ${theme.breakpoints.mediumSmall}) {
+  @media only screen and (max-width: 1020px) {
     width: 100%;
   }
 `;

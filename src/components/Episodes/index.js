@@ -10,10 +10,10 @@ const Episodes = ({ episodesData }) => {
   return (
     <>
       <PageHelmet />
-      <div className={styles.pageContainerClass}>
+      <div css={styles.pageContainerClass}>
         <Nav />
-        <h1 className={styles.pageTitleClass}>Episodes</h1>
-        <div className={styles.episodesContainerClass}>
+        <h1 css={styles.pageTitleClass}>Episodes</h1>
+        <div css={styles.episodesContainerClass}>
           {episodesData.map(({ node: { title, publishedAt, image, imageUrl, slug, description }}, idx) => 
             <Episode key={idx} title={title} publishedAt={publishedAt} imageUrl={imageUrl} description={description} slug={slug} image={image} />
           )}
