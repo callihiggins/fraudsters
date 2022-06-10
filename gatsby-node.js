@@ -84,6 +84,7 @@ exports.onCreateNode = async ({
   createNodeId
 }) => {
   if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
+    console.log(node.title, node.imageUrl)
     const fileNode = await createRemoteFileNode({
       url: node.imageUrl,
       parentNodeId: node.id,
