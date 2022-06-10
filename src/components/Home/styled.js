@@ -7,7 +7,7 @@ const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
 export const mainContainerClass = {
   backgroundColor: `${theme.colors.yellow}`,
-  height: `calc(100vh - ${theme.componentsHeight.footer})`,
+  height: `calc(100vh - ${theme.componentsHeight.footer}) !important`,
   width: '100vw',
   position: 'relative',
 
@@ -22,7 +22,7 @@ export const titleClass = {
   fontFamily: `${theme.fonts.upAway}, sans-serif`,
   fontSize: '110px',
   letterSpacing: '1.5px',
-  "-webkit-font-smoothing": 'antialiased',
+  WebkitFontSmoothing: 'antialiased',
   fontWeight: '500',
   padding: '5px 0 0 20px',
   zIndex: '1000',
@@ -38,7 +38,7 @@ export const titleClass = {
 
 export const drawingClass = {
   position: 'absolute',
-  bottom: '2px',
+  bottom: '0',
   right: '40px',
   width: '79vh',
   height: '75vh',
@@ -209,4 +209,9 @@ export const footerClass = {
   '@media only screen and (max-width: 800px)': {
     position: 'relative'
   }
+}
+
+export const socialSetionClass = {
+  //height: `calc(100vh - ${theme.componentsHeight.footer})`,
+  height: '100vh'
 }
