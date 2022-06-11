@@ -32,8 +32,23 @@ const Home = () => {
           }
         }
       }
+      allInstagramContent {
+        edges {
+          node {
+            caption
+            media_url
+            localFile {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
     }`
   )
+
+  debugger;
   return (
     <>
       <ReactFullpage

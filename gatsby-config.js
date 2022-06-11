@@ -63,6 +63,12 @@ module.exports = {
       options: {
         trackingIds: [process.env.GA_TRACKING_ID],
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.INSTAGRAM_API_KEY,
+      }
+  }
   ]
 };
