@@ -213,5 +213,5 @@ export const footerClass = {
 
 export const socialSetionClass = {
   //height: `calc(100vh - ${theme.componentsHeight.footer})`,
-  height: '100vh'
+ // height: '100vh'
 }

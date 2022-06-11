@@ -5,6 +5,7 @@ import { cx } from '@emotion/css';
 import Img from 'gatsby-image';
 import ReactFullpage from '@fullpage/react-fullpage'; 
 import YouTube from './YouTube';
+import IGPhoto from './IGPhoto';
 import Footer from '../Footer';
 import MobileNav from '../Nav/MobileNav';
 import * as styles from './styled';
@@ -39,7 +40,9 @@ const Home = () => {
             media_url
             localFile {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                fixed(width: 200, height: 200) {
+                  ...GatsbyImageSharpFixed
+                }
               }
             }
           }
@@ -48,7 +51,7 @@ const Home = () => {
     }`
   )
 
-  debugger;
+  // debugger;
   return (
     <>
       <ReactFullpage
@@ -85,6 +88,11 @@ const Home = () => {
               <div className={styles.youtubeContainer}>
                 {data.allYoutubeVideo.edges.map(({node}) =>
                   <YouTube videoId={node.videoId} videoTitle={node.title} />
+                )}
+              </div>
+              <div className={styles.instagrameContainer}>
+                {data.allInstagramContent.edges.map(({node}) =>
+                  <IGPhoto image={node.localFile.childImageSharp.fixed} />
                 )}
               </div>
             </section>
