@@ -213,14 +213,13 @@ export const footerClass = {
 
 export const socialSetionClass = {
   backgroundColor: `${theme.colors.yellow}`,
-
 }
 
-export const socialHeaderClass = {
+export const socialSectionHeaderClass = {
   display: 'flex',
   alignItems: 'center',
   gap: '30px',
-  padding: '40px 20px',
+  padding: '40px 20px 20px 20px',
   h2: {
     fontFamily: `${theme.fonts.upAway}, sans-serif`,
     fontSize: '48px',
@@ -237,32 +236,42 @@ export const lineClass = {
   width: '100%',
 }
 
-export const youtubeContainerClass = {
-  padding: '0 20px',
-  a: {
-    color: '#000000',
-    textDecoration:'none',
-    display: 'flex',
-    alignItems: 'center',
-  }
+export const socialContainerClass = {
+  padding: '20px',
 }
 
-export const videosContainerClass = {
+export const socialThumbnailContainerClass = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fill, 300px)',
   justifyContent: 'space-around',
   gridGap: '20px',
 }
 
-export const youTubeHeaderClass = {
+export const igThumbnailContainerClass = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, 300px)',
+  justifyContent: 'space-around',
+  gridGap: '15px',
+  paddingBottom: '140px',
+  alignItems: 'flex-start'
+}
+
+export const socialHeaderClass = {
   paddingBottom: '20px',
   img: {
     borderRadius: '50%',
     width: '60px',
+  },
+  a: {
+    color: '#000000',
+    textDecoration:'none',
+    display: 'flex',
+    alignItems: 'center',
+    maxWidth: '350px'
   }
 }
 
-export const youTubeUserClass = {
+export const socialUserClass = {
   marginLeft: '5px',
   fontWeight: '700',
   fontSize: '18px',
