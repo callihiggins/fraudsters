@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { useStaticQuery, graphql } from "gatsby"
 import { cx } from '@emotion/css';
 import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 import ReactFullpage from '@fullpage/react-fullpage'; 
 import YouTube from './YouTube';
 import IGPhoto from './IGPhoto';
 import Footer from '../Footer';
 import MobileNav from '../Nav/MobileNav';
 import * as styles from './styled';
-import { socialMediaIconsClass } from '../Footer/styled';
 
 const Home = () => {
 
@@ -37,11 +38,15 @@ const Home = () => {
         edges {
           node {
             caption
-            media_url
+            permalink
+            caption
             localFile {
               childImageSharp {
-                fixed(width: 200, height: 200) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 200) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
                 }
               }
             }
@@ -51,13 +56,13 @@ const Home = () => {
     }`
   )
 
-  // debugger;
   return (
     <>
       <ReactFullpage
         debug
         licenseKey={process.env.FULLPAGE_LICENSE}
-        scrollBar
+        // scrollBar
+        scrollOverflow={true}
         render={() => (    
           <ReactFullpage.Wrapper>
             <section css={styles.mainContainerClass} className='section'>
@@ -85,14 +90,27 @@ const Home = () => {
               </div>
             </section>
             <section className="section" css={styles.socialSetionClass}>
-              <div className={styles.youtubeContainer}>
-                {data.allYoutubeVideo.edges.map(({node}) =>
-                  <YouTube videoId={node.videoId} videoTitle={node.title} />
-                )}
+              <div css={styles.socialHeaderClass}>
+                <div css={styles.lineClass}/>
+                <h2>Social Round Up</h2>
+                <div css={styles.lineClass}/>
               </div>
-              <div className={styles.instagrameContainer}>
+              <div css={styles.youtubeContainerClass}>
+                <div css={styles.youTubeHeaderClass}>
+                  <OutboundLink href="https://www.youtube.com/channel/UCQwl8sDTVEAxhwJdYgm-yrg" target="_blank">
+                    <StaticImage src="https://yt3.ggpht.com/ytc/AKedOLSRLqhqp_Gu7ctLsiEHIN8lco0aDHvojtypI8OO=s176-c-k-c0x00ffffff-no-rj" alt="youtube profile" />
+                    <div css={styles.youTubeUserClass}>Fraudsters LPN on YouTube</div>
+                  </OutboundLink>
+                </div>
+                <div css={styles.videosContainerClass}>
+                  {data.allYoutubeVideo.edges.map(({node}) =>
+                    <YouTube videoId={node.videoId} videoTitle={node.title} />
+                  )}
+                </div>
+              </div>
+              <div css={styles.instagrameContainerClass}>
                 {data.allInstagramContent.edges.map(({node}) =>
-                  <IGPhoto image={node.localFile.childImageSharp.fixed} />
+                  <IGPhoto image={node.localFile.childImageSharp.fluid} />
                 )}
               </div>
             </section>

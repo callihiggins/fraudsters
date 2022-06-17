@@ -7,7 +7,7 @@ const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
 export const mainContainerClass = {
   backgroundColor: `${theme.colors.yellow}`,
-  height: `calc(100vh - ${theme.componentsHeight.footer}) !important`,
+  height: `calc(100vh - ${theme.componentsHeight.footer} + 1px) !important`,
   width: '100vw',
   position: 'relative',
 
@@ -212,6 +212,60 @@ export const footerClass = {
 }
 
 export const socialSetionClass = {
-  //height: `calc(100vh - ${theme.componentsHeight.footer})`,
- // height: '100vh'
+  backgroundColor: `${theme.colors.yellow}`,
+
+}
+
+export const socialHeaderClass = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '30px',
+  padding: '40px 20px',
+  h2: {
+    fontFamily: `${theme.fonts.upAway}, sans-serif`,
+    fontSize: '48px',
+    textAlign: 'center',
+    whiteSpace: 'pre'
+  }
+
+}
+
+export const lineClass = {
+  height: '1px',
+  borderTop: '1px solid black',
+  background: 'black',
+  width: '100%',
+}
+
+export const youtubeContainerClass = {
+  padding: '0 20px',
+  a: {
+    color: '#000000',
+    textDecoration:'none',
+    display: 'flex',
+    alignItems: 'center',
+  }
+}
+
+export const videosContainerClass = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, 300px)',
+  justifyContent: 'space-around',
+  gridGap: '20px',
+}
+
+export const youTubeHeaderClass = {
+  paddingBottom: '20px',
+  img: {
+    borderRadius: '50%',
+    width: '60px',
+  }
+}
+
+export const youTubeUserClass = {
+  marginLeft: '5px',
+  fontWeight: '700',
+  fontSize: '18px',
+  position: 'relative'
+
 }
