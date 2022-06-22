@@ -20,6 +20,8 @@ const Home = () => {
 
 
   const [activeMenu, updateActive] = useState('home');
+  const igStep = 12;
+  const [numOfIgToShow, updatenumOfIgToShow] = useState(igStep);
 
   const updateActiveCallback = useDebouncedCallback(active => {
     if (activeMenu !== active) {
@@ -41,6 +43,10 @@ const Home = () => {
 
   if (homeInView) {
     updateActiveCallback('home')
+  }
+
+  const showMore = () => {
+    updatenumOfIgToShow(numOfIgToShow + igStep)
   }
 
   const data = useStaticQuery(graphql`
@@ -144,7 +150,7 @@ const Home = () => {
                   )}
                 </div>
               </div>
-              <div css={styles.socialContainerClass}>
+              <div css={[styles.socialContainerClass, styles.igContainerClass]}>
                 <div css={styles.socialHeaderClass}>
                   <OutboundLink href="https://www.instagram.com/fraudsterslpn/" target="_blank">
                     <StaticImage src="https://scontent-lga3-1.cdninstagram.com/v/t51.2885-19/272545685_2797333237234143_8322330572383383566_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=103&_nc_ohc=EzqNvvbvt0AAX8Fkid7&tn=CzCX7oqjnvjNPo7t&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8W4RQIhgVwaa7ds5dNr88pBzOuBCy21wlGa9o-NO2lXQ&oe=62B4495B&_nc_sid=8fd12b" alt="instagram profile" />
@@ -152,7 +158,7 @@ const Home = () => {
                   </OutboundLink>
                 </div>
                 <div css={styles.igThumbnailContainerClass}>
-                  {data.allInstagramContent.edges.slice(0, 12).map(({node}) =>
+                  {data.allInstagramContent.edges.slice(0, numOfIgToShow).map(({node}) =>
                     <IGPhoto
                       image={node.localFile.childImageSharp.fluid}
                       caption={node.caption}
@@ -161,6 +167,7 @@ const Home = () => {
                     />
                   )}
                 </div>
+                <button role="button" onClick={showMore} css={styles.showMoreButtonClass}>Show More</button>
               </div>
             </section>
           </ReactFullpage.Wrapper>

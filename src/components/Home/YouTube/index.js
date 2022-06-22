@@ -1,4 +1,5 @@
 import React from "react"
+import * as styles from './styled';
 
 const Video = ({ videoId, videoTitle, ...props }) => (
   <div className="video">
@@ -11,6 +12,9 @@ const Video = ({ videoId, videoTitle, ...props }) => (
       mozallowfullscreen="true"
       allowFullScreen
     />
+     <div css={styles.captionClass}>
+        {videoTitle}
+     </div>
   </div>
 )
 export default Video

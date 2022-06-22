@@ -258,7 +258,6 @@ export const igThumbnailContainerClass = {
   gridTemplateColumns: 'repeat(auto-fill, 300px)',
   justifyContent: 'space-around',
   gridGap: '15px',
-  paddingBottom: '140px',
   alignItems: 'flex-start'
 }
 
@@ -283,4 +282,22 @@ export const socialUserClass = {
   fontSize: '18px',
   position: 'relative'
 
+}
+
+export const showMoreButtonClass = {
+  background: '#000000',
+  padding: '10px 15px',
+  border: '1px solid #000000',
+  borderRadius: '3px',
+  color: `${theme.colors.white}`,
+  margin: '0 auto',
+  fontWeight: '700',
+  fontSize: '16px',
+  width: '120px',
+  cursor: 'pointer'
+}
+
+export const igContainerClass = {
+  paddingBottom: '140px',
+  textAlign: 'center'
 }

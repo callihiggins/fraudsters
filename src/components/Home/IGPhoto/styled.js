@@ -4,6 +4,7 @@ export const igImageClass = {
   width: '100%',
   display: 'block',
   margin: '15px 0',
+  textAlign: 'left',
   img: {
     width: '100%',
     borderTopLeftRadius: '5px',
@@ -27,5 +28,7 @@ export const captionClass = {
 }
 
 export const timestampClass = {
-  marginBottom: '10px'
+  marginBottom: '10px',
+  fontWeight: '700',
+  cursor: 'pointer'
 }
