@@ -26,13 +26,16 @@ export const titleClass = {
   fontWeight: '500',
   padding: '5px 0 0 20px',
   zIndex: '1000',
+  marginTop: '-40px',
+
 
   "@media only screen and (max-width: 800px)" : {
     fontSize: '30px',
     color: `${theme.colors.yellow}`,
     padding: '20px 0 0 20px',
     width: '200px',
-    position: 'fixed'
+    position: 'fixed',
+    marginTop: 0
   }
 }
 
@@ -213,6 +216,8 @@ export const footerClass = {
 
 export const socialSetionClass = {
   backgroundColor: `${theme.colors.yellow}`,
+  width: '80%',
+  margin: '0 auto',
 }
 
 export const socialSectionHeaderClass = {
@@ -228,6 +233,7 @@ export const socialSectionHeaderClass = {
   }
 
 }
+
 
 export const lineClass = {
   height: '1px',

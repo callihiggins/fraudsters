@@ -69,6 +69,6 @@ module.exports = {
       options: {
         access_token: process.env.INSTAGRAM_API_KEY,
       }
-  }
+    },
   ]
 };

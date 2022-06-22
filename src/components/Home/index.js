@@ -1,11 +1,15 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Link } from 'gatsby';
+import { CSSTransition } from "react-transition-group";
+import { useInView } from 'react-intersection-observer'
+import { useDebouncedCallback } from 'use-lodash-debounce'
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { useStaticQuery, graphql } from "gatsby"
-import { cx } from '@emotion/css';
 import Img from 'gatsby-image';
 import { StaticImage } from "gatsby-plugin-image"
-import ReactFullpage from '@fullpage/react-fullpage'; 
+import ReactFullpage from '@fullpage/react-fullpage';
+import Nav from '../Nav';
 import YouTube from './YouTube';
 import IGPhoto from './IGPhoto';
 import Footer from '../Footer';
@@ -13,6 +17,31 @@ import MobileNav from '../Nav/MobileNav';
 import * as styles from './styled';
 
 const Home = () => {
+
+
+  const [activeMenu, updateActive] = useState('home');
+
+  const updateActiveCallback = useDebouncedCallback(active => {
+    if (activeMenu !== active) {
+      updateActive(active);
+    }
+  }, 100); 
+
+  const [socialRef, socialInView] = useInView({
+    threshold: .5,
+  })
+
+  const [homeRef, homeInView] = useInView({
+    threshold: .5,
+  })
+
+  if (socialInView) {
+    updateActiveCallback('social')
+  }
+
+  if (homeInView) {
+    updateActiveCallback('home')
+  }
 
   const data = useStaticQuery(graphql`
     query {
@@ -59,14 +88,20 @@ const Home = () => {
 
   return (
     <>
+      <CSSTransition
+        in={activeMenu !== 'home'}
+        timeout={1000}
+        classNames="nav"
+      >
+        <Nav fadedNav={activeMenu === 'home'}/>
+      </CSSTransition>
       <ReactFullpage
-        debug
         licenseKey={process.env.FULLPAGE_LICENSE}
         // scrollBar
         scrollOverflow={true}
         render={() => (    
           <ReactFullpage.Wrapper>
-            <section css={styles.mainContainerClass} className='section'>
+            <section css={styles.mainContainerClass} className='section' ref={homeRef}>
               <div css={styles.headerClass}>
                 <h1 css={styles.titleClass}>Fraudsters</h1>
                 <div css={styles.mobileImageClass}>
@@ -90,7 +125,7 @@ const Home = () => {
                 <Img fluid={data.image.childImageSharp.fluid} width="100%" alt="Seena and Justin" />
               </div>
             </section>
-            <section className="section" css={styles.socialSetionClass}>
+            <section className="section" css={styles.socialSetionClass} ref={socialRef}>
               <div css={styles.socialSectionHeaderClass}>
                 <div css={styles.lineClass}/>
                 <h2>Social Round Up</h2>
