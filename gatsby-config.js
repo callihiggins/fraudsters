@@ -17,6 +17,14 @@ module.exports = {
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://fraudsters.fm',
+        sitemap: 'https://fraudsters.fm/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
+    {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
