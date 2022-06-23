@@ -107,6 +107,7 @@ const Home = () => {
         // scrollBar
         scrollOverflow={true}
         responsiveWidth={800}
+        credits={{ enabled: false }}
         // normalScrollElements='.socialContainerClass'
         render={() => (
           <ReactFullpage.Wrapper>
