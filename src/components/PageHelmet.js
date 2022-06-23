@@ -18,6 +18,7 @@ const PageHelmet = ({ keywords, title, image }) => {
       <Helmet title={PAGE_TITLE}>
         <meta name="keywords" content={PAGE_KEYWORDS}></meta>
         <meta name="description" content={PAGE_DESCRIPTION}></meta>
+        <meta name="google-site-verification" content="xOk8hnImEIO8-KaJ5hYjhNRXhE-eBDRLYW0tLF1Nbik" />
         <link rel="shortcut icon" type="image/x-icon" href={SOCIAL_IMAGE}/>
         <link rel="canonical" href={POD_URL}/>
         <meta property="og:site_name" content="Fraudsters"/>
