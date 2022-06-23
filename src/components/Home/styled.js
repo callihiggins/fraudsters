@@ -12,7 +12,7 @@ export const mainContainerClass = {
   position: 'relative',
 
   "@media only screen and (max-width: 800px)": {
-    height: 'auto',
+    height: 'auto  !important',
     width: '100%',
     minHeight: `calc(100vh - ${theme.componentsHeight.footer})`,
   }
@@ -125,9 +125,8 @@ export const mobileImageClass = {
     display: 'block',
     textAlign: 'center',
     padding: '90px 0 20px 0',
-    img : {
-      width: '60%',
-    }
+    width: '60%',
+    margin: '0 auto',
   }
 }
 
@@ -204,6 +203,13 @@ export const hideDesktop = {
   }
 }
 
+export const hideMobile = {
+  display: 'block',
+  "@media only screen and (max-width: 800px)" : {
+    display: 'none',
+  }
+}
+
 export const footerClass = {
   position: 'fixed',
   bottom: '0',
@@ -218,18 +224,28 @@ export const socialSetionClass = {
   backgroundColor: `${theme.colors.yellow}`,
   width: '80%',
   margin: '0 auto',
+
+  "@media only screen and (max-width: 800px)" : {
+    height: 'auto !important'
+  }
 }
 
 export const socialSectionHeaderClass = {
   display: 'flex',
   alignItems: 'center',
-  gap: '30px',
+  gap: '10px',
   padding: '40px 20px 20px 20px',
   h2: {
     fontFamily: `${theme.fonts.upAway}, sans-serif`,
     fontSize: '48px',
     textAlign: 'center',
     whiteSpace: 'pre'
+  },
+  "@media only screen and (max-width: 800px)" : {
+    padding: '40px 0 20px 0',
+    h2: {
+      fontSize: '32px',
+    }
   }
 
 }
@@ -244,6 +260,9 @@ export const lineClass = {
 
 export const socialContainerClass = {
   padding: '20px',
+  "@media only screen and (max-width: 800px)" : {
+    padding: '20px 0'
+  }
 }
 
 export const socialThumbnailContainerClass = {
@@ -273,6 +292,14 @@ export const socialHeaderClass = {
     display: 'flex',
     alignItems: 'center',
     maxWidth: '350px'
+  },
+  "@media only screen and (max-width: 800px)" : {
+    img: {
+      width: '40px'
+    },
+    a: {
+      maxWidth: '100%'
+    }
   }
 }
 
@@ -299,5 +326,6 @@ export const showMoreButtonClass = {
 
 export const igContainerClass = {
   paddingBottom: '140px',
-  textAlign: 'center'
+  textAlign: 'center',
 }
+
