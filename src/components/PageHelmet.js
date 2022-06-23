@@ -4,15 +4,14 @@ import SITE_IMAGE from '../images/icon.png'
 
 
 
-const PageHelmet = ({ keywords, title, description, image }) => {
+const PageHelmet = ({ keywords, title, image }) => {
   let PAGE_TITLE = 'Fraudsters: The True-Crime, Comedy Podcast';
   let PAGE_KEYWORDS = ['scam', 'true crime', 'podcast', 'last podcast network', 'seena ghaznavi', 'justin williams', 'comedy' ];
-  let PAGE_DESCRIPTION = 'Fraudsters is an all-you-can-eat buffet of liars, cheaters, and scammers. We cover every flavor of fraud you can imagine from fake psychic hotlines to corporations cookin’ the books. This podcast is a collaboration between Zerocool Media and the Last Podcast Network. Hosted by Seena Ghaznavi and Justin Williams. Produced by Hazel Bryan. Theme music by Simon TaufiQue. Find us on Instagram or Twitter @FraudstersLPN Email us with your thoughts at Fraudsterslpn@gmail.com';
+  const PAGE_DESCRIPTION = 'Fraudsters is podcast about liars, cheaters, and scammers hosted by Seena Ghaznavi and Justin Williams.';
   
   const POD_URL = 'https://fraudsters.fm';
   PAGE_KEYWORDS = keywords ? PAGE_KEYWORDS.concat(keywords) : PAGE_KEYWORDS;
   PAGE_TITLE = title ? title : PAGE_TITLE; 
-  PAGE_DESCRIPTION = description ? description : PAGE_DESCRIPTION
   const SOCIAL_IMAGE = image ? image : SITE_IMAGE;
   return (
     <>
