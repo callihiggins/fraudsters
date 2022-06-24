@@ -59,10 +59,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-youtube-v3`,
+      options: {
+        channelId: ['UCQwl8sDTVEAxhwJdYgm-yrg'],
+        apiKey: process.env.YOUTUBE_KEY,
+        maxVideos: 50 // Defaults to 50
+      },
+    },
+    {
     resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [process.env.GA_TRACKING_ID],
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.INSTAGRAM_API_KEY,
+      }
+    },
   ]
 };

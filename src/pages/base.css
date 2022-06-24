@@ -10,5 +10,70 @@
 }
 
 body {
+  background-color: #FFDC04;
   font-family: 'itc-avant-garde-gothic-pro', sans-serif;
+}
+
+.section::-webkit-scrollbar {
+  width: 7px;
+  height: 50%;
+}
+
+
+.section::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey; 
+  border-radius: 10px;
+  margin: 100px 0 200px 0;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-radius: 10px;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
+}
+
+.fullpage-wrapper {
+  padding-top: 70px !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .fullpage-wrapper {
+    padding-top: 0  !important;
+  }
+}
+
+.fadedNav {
+  opacity: 0;
+  transition: opacity 800ms;
+}
+
+.nav-enter {
+  opacity: 1;
+  transition: opacity 800ms;
+}
+
+.nav-enter-done{
+  opacity: 1;
+  transition: opacity 800ms;
+} 
+
+.nav-enter-active {
+  opacity: 1;
+  transition: opacity 800ms;
+}
+.nav-exit {
+  opacity: 0;
+  transition: opacity 800ms;
+}
+.nav-exit-active {
+  opacity: 0;
+  transition: opacity 800ms;
+}
+
+.nav-exit-done {
+  opacity: 0;
+  transition: opacity 800ms;
 }

@@ -5,18 +5,19 @@ const duration = '.5s';
 const distance = '5px';
 const easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
 
-export const navContainer = {
-  backgroundColor: '#000',
-  height: '75px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '10px 20px',
-  alignItems: 'center',
-  position: 'fixed',
-  top: '0',
-  width: '100%',
-  zIndex: '1000',
-}
+export const navContainer = props => css`
+  background-color: #000;
+  height: ${props.fadedNav ? '0' : '75px'};
+  display: flex;
+  justify-content: space-between;
+  padding: 0  20px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: ${props.fadedNav ? '0' : '1'};
+`;
 
 export const logoContainer = {
   a: {

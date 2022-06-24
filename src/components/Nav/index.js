@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MobileNav from './MobileNav';
 import * as styles from './styled';
 
-const Navbar = () => {
+const Navbar = ({ fadedNav }) => {
   return (
-    <nav css={styles.navContainer}>
+    <nav className={styles.navContainer({fadedNav: fadedNav})}>
       <div css={styles.logoContainer}>
         <Link to="/">Fraudsters</Link>
       </div>
