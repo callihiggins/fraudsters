@@ -18,7 +18,9 @@ import * as styles from './styled';
 const Home = () => {
   const [activeMenu, updateActive] = useState('home');
   const igStep = 12;
+  const ytStep = 12;
   const [numOfIgToShow, updatenumOfIgToShow] = useState(igStep);
+  const [numOfYTToShow, updatenumOfYTToShow] = useState(ytStep);
 
   const updateActiveCallback = useDebouncedCallback(active => {
     if (activeMenu !== active) {
@@ -42,8 +44,12 @@ const Home = () => {
     updateActiveCallback('home')
   }
 
-  const showMore = () => {
+  const showMoreIg = () => {
     updatenumOfIgToShow(numOfIgToShow + igStep)
+  }
+
+  const showMoreYT = () => {
+    updatenumOfYTToShow(numOfIgToShow + ytStep)
   }
 
   const data = useStaticQuery(graphql`
@@ -146,10 +152,13 @@ const Home = () => {
                   </OutboundLink>
                 </div>
                 <div css={styles.socialThumbnailContainerClass}>
-                  {data.allYoutubeVideo.edges.map(({node}) =>
+                  {data.allYoutubeVideo.edges.slice(0, numOfYTToShow).map(({node}) =>
                     <YouTube videoId={node.videoId} videoTitle={node.title} />
                   )}
                 </div>
+                  {data.allYoutubeVideo.edges.length > numOfYTToShow && (
+                    <button role="button" onClick={showMoreYT} css={styles.showMoreButtonClass}>Show More</button>
+                  )}
               </div>
               <div css={[styles.socialContainerClass, styles.igContainerClass]}>
                 <div css={styles.socialHeaderClass}>
@@ -168,7 +177,9 @@ const Home = () => {
                     />
                   )}
                 </div>
-                <button role="button" onClick={showMore} css={styles.showMoreButtonClass}>Show More</button>
+                {data.allInstagramContent.edges.length > numOfIgToShow && (
+                  <button role="button" onClick={showMoreIg} css={styles.showMoreButtonClass}>Show More</button>
+                )}
               </div>
             </section>
           </ReactFullpage.Wrapper>

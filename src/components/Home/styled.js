@@ -260,6 +260,7 @@ export const lineClass = {
 
 export const socialContainerClass = {
   padding: '20px',
+  textAlign: 'center',
   "@media only screen and (max-width: 800px)" : {
     padding: '20px 0'
   }
@@ -326,6 +327,5 @@ export const showMoreButtonClass = {
 
 export const igContainerClass = {
   paddingBottom: '140px',
-  textAlign: 'center',
 }
 

@@ -9,5 +9,6 @@ export const captionClass = {
   fontSize: '12px',
   opacity: '.85',
   lineHeight: '18px',
-  marginTop: '-5px'
+  marginTop: '-5px',
+  textAlign: 'left'
 }
