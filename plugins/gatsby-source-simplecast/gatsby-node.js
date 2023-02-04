@@ -14,6 +14,9 @@ const {
 const PodcastEpisodeNode = createNodeFactory('PodcastEpisode', node => {
   return node;
 });
+
+const nodeWithImage = ['SimplecastPodcastEpisode'];
+
 const PLUGIN_NAME = 'gatsby-source-simplecast';
 const DEFAULTS = {
   fetchLimit: 99
@@ -23,7 +26,10 @@ exports.sourceNodes = async ({
   actions: {
     createNode,
     setPluginStatus
-  }
+  },
+  getCache,
+  createNodeId,
+
 }, {
   token,
   podcastId,
@@ -41,13 +47,13 @@ exports.sourceNodes = async ({
       podcastId
     });
     const episodes = await sc.getEpisodes(fetchLimit);
-    const episodesWithKeywords = await Promise.all(episodes.map(async episode => {
+    const episodesWithKeywords = await Promise.all(episodes?.map(async episode => {
       const keywordNodes = await sc.getEpisodeKeywords(episode.id);
-      const keyWordNodeValues = keywordNodes.collection.map(keyword => keyword.value);
+      const keyWordNodeValues = keywordNodes?.collection?.map(keyword => keyword.value);
       episode.keywords = keyWordNodeValues;
       return episode;
     }));
-    const episodesWithSearchData = await Promise.all(episodesWithKeywords.map(async episode => {
+    const episodesWithSearchData = await Promise.all(episodesWithKeywords?.map(async episode => {
       const episodeNode = await sc.getEpisodeSearchData(episode.slug);
       episode.longDescription = episodeNode.longDescription;
       episode.authors = episodeNode.authors?.collection?.map(author => author.name);
@@ -56,8 +62,26 @@ exports.sourceNodes = async ({
     if (episodesWithSearchData) {
       await Promise.all(
         episodesWithSearchData
-          .map(episode => PodcastEpisodeNode(episode))
-          .map(node => createNode(node))
+          ?.map(episode => PodcastEpisodeNode(episode))
+          .map(async node => {
+            if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
+              console.log('img url', node.imageUrl)
+              const fileNode = await createRemoteFileNode({
+                url: node.imageUrl,
+                parentNodeId: node.id,
+                createNode,
+                createNodeId,
+                getCache,
+              });
+          
+              if (fileNode) {
+                node.image___NODE = fileNode.id;
+             //   createNodeField({ node, name: 'image', value: fileNode.id })
+                console.log('modified node', node)
+              }
+          }
+          return createNode(node);
+        })
       ).catch(e => console.log(e));
     }
     setPluginStatus({

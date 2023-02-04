@@ -1,5 +1,5 @@
 const path = require("path")
-const { createRemoteFileNode } = require('gatsby-source-filesystem')
+// const { createRemoteFileNode } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -74,32 +74,32 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-const nodeWithImage = ['SimplecastPodcastEpisode'];
+// const nodeWithImage = ['SimplecastPodcastEpisode'];
 
-exports.onCreateNode = async ({
-  node,
-  actions: { createNode, createNodeField },
-  createNodeId,
-  getCache,
-}) => {
+// exports.onCreateNode = async ({
+//   node,
+//   actions: { createNode, createNodeField },
+//   createNodeId,
+//   getCache,
+// }) => {
 
-  if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
-    console.log('img url', node.imageUrl)
-    const fileNode = await createRemoteFileNode({
-      url: node.imageUrl,
-      parentNodeId: node.id,
-      createNode,
-      createNodeId,
-      getCache,
-    });
+//   if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
+//     console.log('img url', node.imageUrl)
+//     const fileNode = await createRemoteFileNode({
+//       url: node.imageUrl,
+//       parentNodeId: node.id,
+//       createNode,
+//       createNodeId,
+//       getCache,
+//     });
 
-    if (fileNode) {
-      node.image___NODE = fileNode.id;
-   //   createNodeField({ node, name: 'image', value: fileNode.id })
-      console.log('modified node', node)
-    }
-  }
-};
+//     if (fileNode) {
+//       node.image___NODE = fileNode.id;
+//    //   createNodeField({ node, name: 'image', value: fileNode.id })
+//       console.log('modified node', node)
+//     }
+//   }
+// };
 
 exports.createSchemaCustomization = ({
   actions,
