@@ -37,7 +37,7 @@ function EpisodePage({ pageContext }) {
                 <div css={styles.descriptionClass} dangerouslySetInnerHTML={{ __html: episode.longDescription ? episode.longDescription : episode.description}}></div>
               </div>
               <div css={styles.imageAndAuthorsClass}>
-                {episode.image ? <Img fluid={episode.image.childImageSharp.fluid} width="100%" alt="episode image"/> : <StaticImage css={styles.plaeceHolderImageClass} src="../../images/s2-coverart.jpg" alt="episode image"/>}
+                {episode.imageUrl ? <Img fluid={episode.image.childImageSharp.fluid} width="100%" alt="episode image"/> : <StaticImage css={styles.plaeceHolderImageClass} src="../../images/s2-coverart.jpg" alt="episode image"/>}
                 <div css={[styles.authorsClass, styles.hideMobile]}>
                   <strong>Show Contributors</strong>
                   <ul>

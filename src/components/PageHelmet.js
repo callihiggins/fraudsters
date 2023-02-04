@@ -6,7 +6,7 @@ import SITE_IMAGE from '../images/icon.png'
 
 const PageHelmet = ({ keywords, title, image }) => {
   let PAGE_TITLE = 'Fraudsters: The True-Crime, Comedy Podcast';
-  let PAGE_KEYWORDS = ['scam', 'true crime', 'podcast', 'last podcast network', 'seena ghaznavi', 'justin williams', 'comedy' ];
+  let PAGE_KEYWORDS = ['fraudsters', 'seena ghaznavi', 'justin williams', 'scam', 'true crime', 'podcast', 'last podcast network',  'comedy' ];
   const PAGE_DESCRIPTION = 'Fraudsters is podcast about liars, cheaters, and scammers hosted by Seena Ghaznavi and Justin Williams.';
   
   const POD_URL = 'https://fraudsters.fm';

@@ -53,11 +53,13 @@ exports.sourceNodes = async ({
       episode.authors = episodeNode.authors?.collection?.map(author => author.name);
       return episode;
     }));
-    await Promise.all(
-      episodesWithSearchData
-        .map(episode => PodcastEpisodeNode(episode))
-        .forEach(node => createNode(node))
-    );
+    if (episodesWithSearchData) {
+      await Promise.all(
+        episodesWithSearchData
+          .map(episode => PodcastEpisodeNode(episode))
+          .forEach(node => createNode(node))
+      );
+    }
     setPluginStatus({
       lastFetched: Date.now()
     });
