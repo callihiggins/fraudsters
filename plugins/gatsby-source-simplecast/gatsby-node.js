@@ -58,7 +58,7 @@ exports.sourceNodes = async ({
         episodesWithSearchData
           .map(episode => PodcastEpisodeNode(episode))
           .forEach(node => createNode(node))
-      );
+      ).catch(e => console.log(e));
     }
     setPluginStatus({
       lastFetched: Date.now()
