@@ -57,7 +57,7 @@ exports.sourceNodes = async ({
       await Promise.all(
         episodesWithSearchData
           .map(episode => PodcastEpisodeNode(episode))
-          .forEach(node => createNode(node))
+          .map(node => createNode(node))
       ).catch(e => console.log(e));
     }
     setPluginStatus({

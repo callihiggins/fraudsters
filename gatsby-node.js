@@ -37,11 +37,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const titles = queryResults.data.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
-  const filteredData =  queryResults.data.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
+  const titles = queryResults?.data?.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
+  const filteredData =  queryResults?.data?.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
   const episodeTemplate = path.resolve(`src/templates/episodePage.js`);
   const episodesTemplate = path.resolve(`src/templates/episodesPage.js`);
-
   createPage({
     path: `/episodes`,
     component: episodesTemplate,
@@ -59,7 +58,8 @@ exports.createPages = async ({ graphql, actions }) => {
     if (index < filteredData.length - 1) {
       prevEpisode = filteredData[index + 1].node;
     }
-  
+    console.log('NODE', edge.node);
+
     const defaultAuthors = ['Seena Ghaznavi', 'Justin Williams'];
     if (!edge.node.authors || edge.node.authors.length === 0) edge.node.authors = [...defaultAuthors];
     createPage({
@@ -78,25 +78,25 @@ const nodeWithImage = ['SimplecastPodcastEpisode'];
 
 exports.onCreateNode = async ({
   node,
-  actions,
-  store,
-  cache,
-  createNodeId
+  actions: { createNode, createNodeField },
+  createNodeId,
+  getCache,
 }) => {
+
   if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
-    console.log(node.title, node.imageUrl)
+    console.log('img url', node.imageUrl)
     const fileNode = await createRemoteFileNode({
       url: node.imageUrl,
       parentNodeId: node.id,
-      parent: node.id,
-      createNode: actions.createNode,
+      createNode,
       createNodeId,
-      cache,
-      store
+      getCache,
     });
 
     if (fileNode) {
       node.image___NODE = fileNode.id;
+   //   createNodeField({ node, name: 'image', value: fileNode.id })
+      console.log('modified node', node)
     }
   }
 };
