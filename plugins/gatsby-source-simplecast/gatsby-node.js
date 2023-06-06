@@ -47,18 +47,21 @@ exports.sourceNodes = async ({
       podcastId
     });
     const episodes = await sc.getEpisodes(fetchLimit);
-    const episodesWithKeywords = await Promise.all(episodes?.map(async episode => {
-      const keywordNodes = await sc.getEpisodeKeywords(episode.id);
-      const keyWordNodeValues = keywordNodes?.collection?.map(keyword => keyword.value);
-      episode.keywords = keyWordNodeValues;
-      return episode;
-    }));
-    const episodesWithSearchData = await Promise.all(episodesWithKeywords?.map(async episode => {
+    // const episodesWithKeywords = await Promise.all(episodes?.map(async episode => {
+    //   const keywordNodes = await sc.getEpisodeKeywords(episode.id);
+    //   console.log(keywordNodes)
+    //   const keyWordNodeValues = keywordNodes?.collection?.map(keyword => keyword.value);
+    //   episode.keywords = keyWordNodeValues;
+    //   return episode;
+    // }));
+    // console.log(episodesWithKeywords)
+    const episodesWithSearchData = await Promise.all(episodes?.map(async episode => {
       const episodeNode = await sc.getEpisodeSearchData(episode.slug);
       episode.longDescription = episodeNode.longDescription;
       episode.authors = episodeNode.authors?.collection?.map(author => author.name);
       return episode;
     }));
+    console.log(episodesWithSearchData)
     if (episodesWithSearchData) {
       await Promise.all(
         episodesWithSearchData

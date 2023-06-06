@@ -26,7 +26,7 @@ function EpisodePage({ pageContext }) {
   return (
     <>
       <div css={styles.pageContainerClass}>
-        <PageHelmet image={episode.imageUrl} description={episode.longDescription || episode.description} title={episode.title} keywords={[...episode.authors, ...episode.keywords]} />
+        <PageHelmet image={episode.imageUrl} description={episode.longDescription || episode.description} title={episode.title} keywords={episode.authors} />
         <Nav />
         <div css={styles.episodeContainerClass}>
             <h1 css={styles.pageTitleClass}>{episode.title}</h1>

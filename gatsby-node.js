@@ -18,7 +18,6 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             number
             simplecastId
-            keywords
             publishedAt(formatString: "dddd, MMMM Do YYYY")
             imageUrl
             image {
