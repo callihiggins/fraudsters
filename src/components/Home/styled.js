@@ -42,17 +42,17 @@ export const titleClass = {
 export const drawingClass = {
   position: 'absolute',
   bottom: '0',
-  right: '40px',
-  width: '79vh',
-  height: '75vh',
-  maxWidth: '700px',
-  maxHeight: '666px',
+  right: '0px',
+  width: '85vh',
+  // height: '90vh',
+  // maxWidth: '700px',
+  // maxHeight: '666px',
 
 
   "@media only screen and (max-width: 1200px)" : {
     height: 'auto',
     width: '55%',
-    right: '20px',
+    right: '0px',
     bottom: '0',
   },
 
