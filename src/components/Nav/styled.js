@@ -24,7 +24,8 @@ export const logoContainer = {
     color: `${theme.colors.yellow}`,
     textDecoration: 'none',
     fontSize: '24px',
-    fontFamily: `${theme.fonts.upAway}`
+    fontWeight: '800',
+    fontFamily: `${theme.fonts.dunbar}`
   }
 }
 

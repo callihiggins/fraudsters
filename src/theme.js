@@ -10,7 +10,7 @@ export default {
     small: '800px'
   },
   fonts: {
-    upAway: 'CCUpUpAndAway',
+    dunbar: 'dunbar-tall',
     avantGarde: 'itc-avant-garde-gothic-pro'
   },
   componentsHeight: {

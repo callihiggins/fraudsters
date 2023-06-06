@@ -8,7 +8,7 @@ export const pageContainerClass = {
 
 export const pageTitleClass = {
   fontSize: '36px',
-  fontFamily: `${theme.fonts.upAway}`,
+  fontFamily: `${theme.fonts.dunbar}`,
   marginTop: '10px',
 
   '@media only screen and (max-width:800px)': {

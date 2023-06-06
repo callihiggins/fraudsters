@@ -5,8 +5,9 @@
 }
 
 @font-face {
-  font-family: 'CCUpUpAndAway';
-  src: url("../fonts/CCUpUpAndAway.woff2");
+  font-family: 'dunbar-low';
+  font-weight: 800;
+  font-style: normal;
 }
 
 body {

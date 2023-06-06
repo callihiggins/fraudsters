@@ -9,7 +9,7 @@ export const pageContainerClass = {
 
 export const pageTitleClass = {
   margin: '20px auto',
-  fontFamily: `${theme.fonts.upAway}`,
+  fontFamily: `${theme.fonts.dunbar}`,
   color: '#000000',
   textAlign: 'center',
   padding: '10px 0',
@@ -46,7 +46,7 @@ export const personClass = {
 }
 
 export const quoteClass = {
-  fontFamily: `${theme.fonts.upAway}`,
+  fontFamily: `${theme.fonts.dunbar}`,
   fontSize: '30px',
   textAlign: 'center',
 }

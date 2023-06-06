@@ -8,7 +8,7 @@ export const pageContainerClass = {
 
 export const pageTitleClass = {
   textAlign: 'center',
-  fontFamily: `${theme.fonts.upAway}`,
+  fontFamily: `${theme.fonts.dunbar}`,
   margin: '10px 0',
   fontSize: '72px',
   padding: '20px',

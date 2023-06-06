@@ -19,11 +19,10 @@ export const mainContainerClass = {
 }
 
 export const titleClass = {
-  fontFamily: `${theme.fonts.upAway}, sans-serif`,
+  fontFamily: `${theme.fonts.dunbar}, sans-serif`,
   fontSize: '110px',
-  letterSpacing: '1.5px',
   WebkitFontSmoothing: 'antialiased',
-  fontWeight: '500',
+  fontWeight: '700',
   padding: '5px 0 0 20px',
   zIndex: '1000',
   marginTop: '-40px',
@@ -236,7 +235,7 @@ export const socialSectionHeaderClass = {
   gap: '10px',
   padding: '40px 20px 20px 20px',
   h2: {
-    fontFamily: `${theme.fonts.upAway}, sans-serif`,
+    fontFamily: `${theme.fonts.dunbar}, sans-serif`,
     fontSize: '48px',
     textAlign: 'center',
     whiteSpace: 'pre'
