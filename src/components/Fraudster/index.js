@@ -8,7 +8,7 @@ import Footer from '../Footer';
 import Nav from '../Nav';
 // import * as styles from './styled'
 
-const Fraudster = ({fraudsterData}) => {
+const Fraudster = ({fraudsterData, description, name, photo}) => {
   const Bold = ({ children }) => <span className="bold">{children}</span>
   const Text = ({ children }) => <p className="align-center">{children}</p>
   const options = {

@@ -39,10 +39,10 @@ export const query = graphql`query GetBlogPostsByTag($tag: String!) {
   }	
 }`
 
-const FraudsterPage = ({ data }) => {
-  console.log(data)
+const FraudsterPage = ({ data, pageContext } ) => {
+  const { name, photo, description} = pageContext;
   return (
-    <Fraudster fraudsterData={data}/>
+    <Fraudster fraudsterData={data} name={name} photo={photo} description={description}/>
   )
 }
 

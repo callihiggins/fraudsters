@@ -46,6 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
               name
             }
           }
+          description {
+						description
+          }
           photo {
             fluid(quality: 100) {
               aspectRatio
@@ -113,6 +116,9 @@ exports.createPages = async ({ graphql, actions }) => {
       component: fraudsterTemplate,
       context: {
         tag: node.metadata.tags[0].name,
+        description: node.description,
+        photo: node.photo,
+        name: node.name
       },
     })
   })
