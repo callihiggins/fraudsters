@@ -112,7 +112,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/fraudster/${node.metadata.tags[0].name}`,
       component: fraudsterTemplate,
       context: {
-        fraudsterData: node.metadata.tags[0].name,
+        tag: node.metadata.tags[0].name,
       },
     })
   })
