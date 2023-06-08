@@ -64,5 +64,13 @@ module.exports = {
         trackingIds: [process.env.GA_TRACKING_ID],
       }
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        enableTags: true
+      },
+    },
   ]
 };

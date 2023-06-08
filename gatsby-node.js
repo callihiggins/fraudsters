@@ -3,7 +3,7 @@ const path = require("path")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const queryResults = await graphql(`
+  const podcastQueryResults = await graphql(`
     query PodcastPageQuery {
       allSimplecastPodcastEpisode(sort: { fields: [publishedAt, number ], order: DESC }) {
         edges {
@@ -36,8 +36,31 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const titles = queryResults?.data?.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
-  const filteredData =  queryResults?.data?.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
+  const fraudstersQueryResults = await graphql(`
+    query FraudsterPageQuery {
+      allContentfulFraudster {
+        nodes {
+          name
+          metadata {
+            tags {
+              name
+            }
+          }
+          photo {
+            fluid(quality: 100) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            } 
+          }
+        } 
+      }
+    }`);
+
+
+  const titles = podcastQueryResults?.data?.allSimplecastPodcastEpisode?.edges?.map(edge => edge.node.title);
+  const filteredData =  podcastQueryResults?.data?.allSimplecastPodcastEpisode?.edges?.filter((edge, index) => !titles.includes(edge.node.title, index + 1))
   const episodeTemplate = path.resolve(`src/templates/episodePage.js`);
   const episodesTemplate = path.resolve(`src/templates/episodesPage.js`);
   createPage({
@@ -57,7 +80,6 @@ exports.createPages = async ({ graphql, actions }) => {
     if (index < filteredData.length - 1) {
       prevEpisode = filteredData[index + 1].node;
     }
-    console.log('NODE', edge.node);
 
     const defaultAuthors = ['Seena Ghaznavi', 'Justin Williams'];
     if (!edge.node.authors || edge.node.authors.length === 0) edge.node.authors = [...defaultAuthors];
@@ -68,6 +90,29 @@ exports.createPages = async ({ graphql, actions }) => {
         episode: edge.node,
         prevEpisode,
         nextEpisode 
+      },
+    })
+  })
+
+  const fraudstersTemplate = path.resolve(`src/templates/theFraudstersPage.js`);
+  const fraudsterTemplate = path.resolve(`src/templates/fraudsterPage.js`);
+  const theFraudsters = fraudstersQueryResults?.data.allContentfulFraudster.nodes;
+
+  createPage({
+    path: `/thefraudsters`,
+    component: fraudstersTemplate,
+    context: {
+      fraudstersData: theFraudsters
+    },
+  })
+
+  theFraudsters.forEach((node, index) => {
+    console.log(node.metadata.tags[0].name)
+    createPage({
+      path: `/fraudster/${node.metadata.tags[0].name}`,
+      component: fraudsterTemplate,
+      context: {
+        fraudsterData: node.metadata.tags[0].name,
       },
     })
   })

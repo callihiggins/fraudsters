@@ -61,14 +61,12 @@ exports.sourceNodes = async ({
       episode.authors = episodeNode.authors?.collection?.map(author => author.name);
       return episode;
     }));
-    console.log(episodesWithSearchData)
     if (episodesWithSearchData) {
       await Promise.all(
         episodesWithSearchData
           ?.map(episode => PodcastEpisodeNode(episode))
           .map(async node => {
             if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
-              console.log('img url', node.imageUrl)
               const fileNode = await createRemoteFileNode({
                 url: node.imageUrl,
                 parentNodeId: node.id,
@@ -80,7 +78,6 @@ exports.sourceNodes = async ({
               if (fileNode) {
                 node.image___NODE = fileNode.id;
              //   createNodeField({ node, name: 'image', value: fileNode.id })
-                console.log('modified node', node)
               }
           }
           return createNode(node);
