@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageHelmet from '../PageHelmet';
@@ -26,14 +25,22 @@ const Fraudster = ({fraudsterData, description, name, photo}) => {
             alt={description}
           />
         )
-    },
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        debugger;
+        if((node.data.uri).includes('player.simplecast.com')){
+          return <iframe height='250px' width="100%" frameBorder="no" scrolling="no" seamless src={`${node.data.uri}?dark=true&amp;show=true&amp;color=000000`}></iframe>
+
+        } else if((node.data.uri).includes('youtube.com/embed')) {
+          return <iframe src={node.data.uri} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameBorder="0" allowFullScreen></iframe>
+        }
+      }
     },
   }
-  debugger;
   const html = fraudsterData.allContentfulPost.nodes.map(node => renderRichText(node.body, options))
 
   return (
-    <div> stuff 
+    <div>  
       {html}
     </div>
   )
