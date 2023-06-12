@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
+import Img from 'gatsby-image';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from './renderStyles.js'
 
