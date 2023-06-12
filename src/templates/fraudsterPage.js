@@ -32,7 +32,7 @@ export const query = graphql`query GetBlogPostsByTag($tag: String!) {
           ... on ContentfulAsset {
             contentful_id
             description
-            gatsbyImageData(quality: 50)
+            gatsbyImageData(layout: CONSTRAINED, quality: 80, formats: [WEBP, AUTO], placeholder: BLURRED)
             __typename
           }
         }
