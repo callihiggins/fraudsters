@@ -29,10 +29,7 @@ export const embedPhotoClass = {
   textAlign: 'center',
   img : {
     width: '40%',
-    margin: '0 auto',
-    '@media only screen and (max-width: 800px)': {
-      width: '100%',
-    }
-  }
+    margin: '0 auto',   
+  },
 }
 
