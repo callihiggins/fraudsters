@@ -4,7 +4,11 @@ import { default as theme } from '../theme';
 export const embedClass = {
   width: '80%',
   margin: '20px auto',
-  height: '100%'
+  height: '100%',
+  '@media only screen and (max-width: 800px)': {
+    width: '100%',
+  }
+
 }
 
 export const embedContainerClass = {
@@ -13,7 +17,10 @@ export const embedContainerClass = {
 
 export const youTubeClass = {
   width: '560px',
-  height: '315px'
+  height: '315px',
+  '@media only screen and (max-width: 800px)': {
+    width: '100%',
+  }
 }
 
 export const embedPhotoClass = {
@@ -22,7 +29,10 @@ export const embedPhotoClass = {
   textAlign: 'center',
   img : {
     width: '40%',
-    margin: '0 auto'
+    margin: '0 auto',
+    '@media only screen and (max-width: 800px)': {
+      width: '100%',
+    }
   }
 }
 

@@ -15,7 +15,6 @@ export const pageTitleClass = {
   padding: '20px',
 
   '@media only screen and (max-width: 800px)': {
-    width: '80%',
     fontSize: '48px',
   }
 }
