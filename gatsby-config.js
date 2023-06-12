@@ -16,6 +16,8 @@ module.exports = {
     "gatsby-plugin-recaptcha",
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-fix-fouc",
+
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
