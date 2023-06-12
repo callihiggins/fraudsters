@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
           name
           metadata {
             tags {
-              name
+              contentful_id
             }
           }
           description {
@@ -59,6 +59,22 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         } 
       }
+      allContentfulPost {
+        nodes {
+          title
+          body {
+            raw
+            references {
+              ... on ContentfulAsset {
+                contentful_id
+                description
+                gatsbyImageData(width: 1000)
+                __typename
+              }
+            }
+          }
+        }
+      }	
     }`);
 
 
@@ -99,7 +115,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const fraudstersTemplate = path.resolve(`src/templates/theFraudstersPage.js`);
   const fraudsterTemplate = path.resolve(`src/templates/fraudsterPage.js`);
+  const postTemplate = path.resolve(`src/templates/postPage.js`);
   const theFraudsters = fraudstersQueryResults?.data.allContentfulFraudster.nodes;
+  const posts = fraudstersQueryResults?.data.allContentfulPost.nodes;
 
   createPage({
     path: `/thefraudsters`,
@@ -110,46 +128,36 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   theFraudsters.forEach((node, index) => {
-    console.log(node.metadata.tags[0].name)
+    if (node.metadata?.tags[0]?.contentful_id) {
+      createPage({
+        path: `/fraudster/${node.metadata.tags[0].contentful_id}`,
+        component: fraudsterTemplate,
+        context: {
+          tag: node.metadata.tags[0].contentful_id,
+          description: node.description,
+          photo: node.photo,
+          name: node.name
+        },
+      })
+    }
+  })
+
+  const convertToSlug = text => 
+    text.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+  
+  posts.forEach((node, index) => {
+    const slug = convertToSlug(node.title)
+    console.log('slug', slug)
     createPage({
-      path: `/fraudster/${node.metadata.tags[0].name}`,
-      component: fraudsterTemplate,
+      path: `/blog/${slug}`,
+      component: postTemplate,
       context: {
-        tag: node.metadata.tags[0].name,
-        description: node.description,
-        photo: node.photo,
-        name: node.name
+        postData: node,
       },
     })
   })
+
 }
-
-// const nodeWithImage = ['SimplecastPodcastEpisode'];
-
-// exports.onCreateNode = async ({
-//   node,
-//   actions: { createNode, createNodeField },
-//   createNodeId,
-//   getCache,
-// }) => {
-
-//   if (nodeWithImage.includes(node.internal.type) && node.imageUrl) {
-//     console.log('img url', node.imageUrl)
-//     const fileNode = await createRemoteFileNode({
-//       url: node.imageUrl,
-//       parentNodeId: node.id,
-//       createNode,
-//       createNodeId,
-//       getCache,
-//     });
-
-//     if (fileNode) {
-//       node.image___NODE = fileNode.id;
-//    //   createNodeField({ node, name: 'image', value: fileNode.id })
-//       console.log('modified node', node)
-//     }
-//   }
-// };
 
 exports.createSchemaCustomization = ({
   actions,

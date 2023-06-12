@@ -13,6 +13,7 @@ const Navbar = ({ fadedNav }) => {
       </div>
       <div css={styles.hideMobile}>
         <div css={styles.linksContainer}>
+          <Link activeClassName='activeClass' to="/thefraudsters">The Fraudsters</Link>
           <Link activeClassName='activeClass' to="/episodes">Episodes</Link>
           <Link activeClassName='activeClass' to="/merch">Merch</Link>
           <Link activeClassName='activeClass' to="/about">About</Link>

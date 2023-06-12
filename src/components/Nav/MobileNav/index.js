@@ -20,6 +20,7 @@ const Nav = () => {
     <div css={styles.navClass}>
       <MobileMenu isOpen={open} customBurgerIcon={ <img src={hamburger} alt="menu"/> } right width={ '75%' } >
         <nav css={styles.mobileNavClass}>
+          <Link activeClassName='activeClass' to="/thefraudsters" onClick={closeMenu}>The Fraudsters</Link>
           <Link activeClassName='activeClass' to="/episodes" onClick={closeMenu}>Episodes</Link>
           <Link activeClassName='activeClass' to="/merch" onClick={closeMenu}>Merch</Link>
           <Link activeClassName='activeClass' to="/about" onClick={closeMenu}>About</Link>

@@ -46,6 +46,7 @@ const Home = () => {
                 </div>
               </div>
               <nav css={styles.navClass}>
+                <Link to="/thefraudsters">The Fraudsters</Link>
                 <Link to="/episodes">Episodes</Link>
                 <Link to="/merch">Merch</Link>
                 <Link to="/about">About</Link>

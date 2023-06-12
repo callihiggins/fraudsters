@@ -7,7 +7,7 @@ export const titleClass = {
   cursor: 'pointer',
   background: '#000',
   color: `${theme.colors.white}`,
-  padding: '0px 15px 15px 15px',
+  padding: '15px',
   fontWeight: '500',
 }
 
@@ -22,7 +22,7 @@ export const dateClass = {
   textAlign: 'center',
 }
 
-export const episodeContainerClass = {
+export const fraudsterContainerClass = {
   width: '28%',
   margin: '20px',
   cursor: 'pointer',

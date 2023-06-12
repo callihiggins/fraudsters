@@ -9,7 +9,6 @@ import * as styles from './styled';
 const Fraudsters = ({ pageContext }) => {
 
   const { fraudstersData } = pageContext;
-  debugger;
   return (
     <>
       <PageHelmet />
@@ -18,11 +17,11 @@ const Fraudsters = ({ pageContext }) => {
         <h1 css={styles.pageTitleClass}>Meet the Fraudsters</h1>
         <div css={styles.fraudsterContainerClass}>
           {fraudstersData.map((fraudster, idx) => (
-            <Fraudster key={idx} name={fraudster.name} photo={fraudster.photo} slug={fraudster.metadata.tags[0].name}/>
+            <Fraudster key={idx} name={fraudster.name} photo={fraudster.photo} slug={fraudster.metadata.tags[0].contentful_id}/>
           ))}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
    
   )

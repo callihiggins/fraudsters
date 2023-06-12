@@ -21,8 +21,10 @@ export const query = graphql`query GetBlogPostsByTag($tag: String!) {
         }
       }
     }
+    sort: { fields: [createdAt], order: DESC }
   ) {
     nodes {
+      createdAt
       title
       body {
         raw

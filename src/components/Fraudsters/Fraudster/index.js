@@ -5,7 +5,7 @@ import * as styles from './styled';
 
 const Fraudster = ({ name, photo, slug }) => {
   return (
-  <div css={styles.episodeContainerClass}>
+  <div css={styles.fraudsterContainerClass}>
       <Link to={`../fraudster/${slug}`}>
         <Img fluid={photo.fluid} width="100%" alt={name} /> 
         <div css={styles.titleClass}>{name}</div>
