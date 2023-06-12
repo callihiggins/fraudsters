@@ -38,11 +38,15 @@ export const personClass = {
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
-  width: 'calc(40% - 20px)',
+  width: 'calc(33% - 20px)',
   paddingBottom: '20px',
   "@media only screen and (max-width: 800px)" : {
     width: '100%',
   }
+}
+
+export const photoClass = {
+  border: '4px solid black'
 }
 
 export const quoteClass = {

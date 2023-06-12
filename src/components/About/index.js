@@ -15,7 +15,7 @@ export const About = () =>
       <h1 css={styles.pageTitleClass}>Meet your friendly, neighborhood Fraudbusters</h1>
       <div css={styles.containerClass}>
         <div css={styles.personClass}>
-          <StaticImage src='../../images/seena.jpeg' alt="Seena Ghaznavi" />
+          <StaticImage css={styles.photoClass} src='../../images/seena.png' alt="Seena Ghaznavi" />
           <div css={styles.bioClass}>
               <div css={styles.quoteClass}>
                 “I’m Seena.”
@@ -29,7 +29,7 @@ export const About = () =>
           </div>
         </div>
         <div css={styles.personClass}>
-          <StaticImage src='../../images/justin.png' alt="Justin Williams" />
+          <StaticImage css={styles.photoClass} src='../../images/justin.png' alt="Justin Williams" />
           <div css={styles.bioClass}>
               <div css={styles.quoteClass}>
                 “I’m Justin.”
@@ -42,6 +42,19 @@ export const About = () =>
             <a href="https://justinwilliamscomedy.com/" target="_blank" rel="noopener noreferrer" css={styles.iconClass}><FontAwesomeIcon icon={solid('laptop')} /></a>
             <a href="https://www.youtube.com/user/JustinCWilliams" target="_blank" rel="noopener noreferrer" css={styles.iconClass}><FontAwesomeIcon icon={brands('youtube')} /></a>
             <a href="https://www.amazon.com/gp/product/B075ZL7R1X/ref=dm_ws_sp_ps_dp" target="_blank" rel="noopener noreferrer" css={styles.iconClass}><FontAwesomeIcon icon={solid('headphones')} /></a>
+          </div>
+        </div>
+        <div css={styles.personClass}>
+          <StaticImage css={styles.photoClass} src='../../images/ariel.png' alt="Justin Williams" />
+          <div css={styles.bioClass}>
+              <div css={styles.quoteClass}>
+                “I’m Ariel.”
+              </div>
+              <div css={styles.nameClass}>— Ariel, Cohost</div>
+          </div>
+          <div css={styles.socialMediaIconsClass}>
+            <a href="https://www.instagram.com/arielleaty/" target="_blank" rel="noopener noreferrer" css={styles.iconClass}><FontAwesomeIcon icon={brands('instagram')} /></a>
+            <a href="https://twitter.com/arielleaty" target="_blank" rel="noopener noreferrer" css={styles.iconClass}><FontAwesomeIcon icon={brands('twitter')} /></a>
           </div>
         </div>
       </div>
