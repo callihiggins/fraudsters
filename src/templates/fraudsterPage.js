@@ -8,43 +8,11 @@ import Fraudster from '../components/Fraudster';
 
 library.add(fab, faEnvelope);
 
-export const query = graphql`query GetBlogPostsByTag($tag: String!) {
-  allContentfulPost (
-    filter: {
-      metadata: {
-        tags: { 
-          elemMatch: { 
-            contentful_id: { 
-              eq: $tag
-            } 
-          } 
-        }
-      }
-    }
-    sort: { fields: [createdAt], order: DESC }
-  ) {
-    nodes {
-      createdAt
-      title
-      body {
-        raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            description
-            gatsbyImageData(layout: CONSTRAINED, quality: 80, formats: [WEBP, AUTO], placeholder: BLURRED)
-            __typename
-          }
-        }
-      }
-    }
-  }	
-}`
-
-const FraudsterPage = ({ data, pageContext } ) => {
-  const { name, photo, description} = pageContext;
+const FraudsterPage = ({ pageContext } ) => {
+  const { name, photo, description, posts, tag } = pageContext;
+  const postsByTag = posts.filter(post => post.metadata.tags.map(postTag => postTag.contentful_id === tag))
   return (
-    <Fraudster fraudsterData={data} name={name} photo={photo} description={description}/>
+    <Fraudster posts={postsByTag} name={name} photo={photo} description={description}/>
   )
 }
 

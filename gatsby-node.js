@@ -59,8 +59,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         } 
       }
-      allContentfulPost {
+      allContentfulPost( sort: { fields: [createdAt], order: ASC }) {
         nodes {
+          metadata {
+            tags {
+              contentful_id
+            }
+          }
           title
           body {
             raw
@@ -136,7 +141,8 @@ exports.createPages = async ({ graphql, actions }) => {
           tag: node.metadata.tags[0].contentful_id,
           description: node.description,
           photo: node.photo,
-          name: node.name
+          name: node.name,
+          posts
         },
       })
     }

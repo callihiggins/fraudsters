@@ -8,8 +8,8 @@ import Footer from '../Footer';
 import Nav from '../Nav';
 import * as styles from './styled'
 
-const Fraudster = ({fraudsterData, description, name, photo}) => {
-  const posts = fraudsterData.allContentfulPost.nodes.map(node => {
+const Fraudster = ({posts, description, name, photo}) => {
+  const renderedPosts = posts?.map(node => {
     const body = renderRichText(node.body, options);
     return <Post body={body} title={node.title} />
   });
@@ -31,7 +31,7 @@ const Fraudster = ({fraudsterData, description, name, photo}) => {
           </div>
         </div> 
         <div css={styles.postsClass}>
-          {posts}
+          {renderedPosts}
         </div>
       </div>
       <Footer />
