@@ -53,11 +53,20 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-omni-font-loader`,
       options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID,
-        },
+        mode: `render-blocking`,
+        preconnect: [`https://use.typekit.net`],
+        web: [
+          {
+            name: `dunbar-tall`,
+            file: `https://use.typekit.net/${process.env.TYPEKIT_ID}.css`,
+          },
+          {
+            name: `itc-avant-garde-gothic-pro`,
+            file: `https://use.typekit.net/${process.env.TYPEKIT_ID}.css`,
+          },
+        ],
       },
     },
     {
