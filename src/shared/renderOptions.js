@@ -17,11 +17,12 @@ const options = {
         debugger;
         if (!gatsbyImageData) return null
         return (
-          <GatsbyImage
-            image={getImage(gatsbyImageData)}
-            alt={description}
-            // css={styles.embedPhotoClass}
-          />
+            <GatsbyImage
+              image={getImage(gatsbyImageData)}
+              alt={description}
+              className="gatsby-image-wrapper"
+              // css={styles.embedPhotoClass}
+            />
         )
       },
       [INLINES.HYPERLINK]: (node) => {
