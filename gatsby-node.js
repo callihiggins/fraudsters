@@ -73,7 +73,12 @@ exports.createPages = async ({ graphql, actions }) => {
               ... on ContentfulAsset {
                 contentful_id
                 description
-                gatsbyImageData(layout: CONSTRAINED, quality: 80, formats: [WEBP, AUTO], placeholder: BLURRED)
+                fluid(quality: 100) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }                 
                 __typename
               }
             }

@@ -14,11 +14,11 @@ const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        const { gatsbyImageData, description } = node.data.target
-        if (!gatsbyImageData) return null
+        const { fluid, description } = node.data.target
+        if (!fluid) return null
         return (
-          <GatsbyImage
-            image={getImage(gatsbyImageData)}
+          <Img
+            fluid={fluid}
             alt={description}
             css={styles.embedPhotoClass}
           />
