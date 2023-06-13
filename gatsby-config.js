@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Fraudssters`,
+    title: `Fraudsters`,
     siteUrl: `https://fraudsters.fm`
   },
   plugins: [
@@ -17,7 +17,6 @@ module.exports = {
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-fix-fouc",
-    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
