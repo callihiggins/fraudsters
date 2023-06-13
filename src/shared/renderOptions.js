@@ -26,15 +26,15 @@ const options = {
       [INLINES.HYPERLINK]: (node) => {
         if((node.data.uri).includes('player.simplecast.com')){
           return (
-            // <div css={styles.embedContainerClass}>
-              <iframe css={styles.embedClass} height='250px' width="100%" frameBorder="no" scrolling="no" seamless src={`${node.data.uri}?dark=true`}></iframe>
-            // </div>
+            <div css={styles.embedContainerClass}>
+              <iframe css={styles.embedClass} height='250px' width="100%" frameBorder="no" scrolling="no" seamless src={`${node.data.uri}?dark=true`} title="simplecast player"></iframe>
+            </div>
           )
         } else if((node.data.uri).includes('youtube.com/embed')) {
           return (
-            // <div css={styles.embedContainerClass}>
-              <iframe css={[styles.embedClass, styles.youTubeClass]} src={node.data.uri} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameBorder="0" allowFullScreen width="560px" height="315px"></iframe>
-            // </div>
+            <div css={styles.embedContainerClass}>
+              <iframe css={[styles.embedClass, styles.youTubeClass]} src={node.data.uri} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" title="youtube player" frameBorder="0" allowFullScreen width="560px" height="315px"></iframe>
+            </div>
           )
         }
       }
