@@ -5,6 +5,7 @@ export const embedClass = {
   width: '80%',
   margin: '20px auto',
   height: '100%',
+  display: 'block',
   '@media only screen and (max-width: 800px)': {
     width: '100%',
   }
@@ -23,13 +24,14 @@ export const youTubeClass = {
   }
 }
 
-// export const embedPhotoClass = {
-//   margin: '20px auto',
-//   width: '80%',
-//   textAlign: 'center',
-//   img : {
-//     width: '40%',
-//     margin: '0 auto',   
-//   },
-// }
+export const embedPhotoClass = {
+  margin: '20px auto',
+  width: '80%',
+  textAlign: 'center',
+  display: 'block',
+  img : {
+    width: '40%',
+    margin: '0 auto',   
+  },
+}
 
