@@ -11,9 +11,9 @@ export const embedClass = {
 
 }
 
-// export const embedContainerClass = {
-//   textAlign: 'center'
-// }
+export const embedContainerClass = {
+  textAlign: 'center'
+}
 
 export const youTubeClass = {
   width: '560px',
