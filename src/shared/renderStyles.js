@@ -23,13 +23,13 @@ export const youTubeClass = {
   }
 }
 
-export const embedPhotoClass = {
-  margin: '20px auto',
-  width: '100%',
-  textAlign: 'center',
-  img : {
-    width: '40%',
-    margin: '0 auto',   
-  },
-}
+// export const embedPhotoClass = {
+//   margin: '20px auto',
+//   width: '80%',
+//   textAlign: 'center',
+//   img : {
+//     width: '40%',
+//     margin: '0 auto',   
+//   },
+// }
 

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
-import Img from 'gatsby-image';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from './renderStyles.js'
 
@@ -14,11 +13,12 @@ const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        const { fluid, description } = node.data.target
-        if (!fluid) return null
+        const { gatsbyImageData, description } = node.data.target
+        debugger;
+        if (!gatsbyImageData) return null
         return (
-          <Img
-            fluid={fluid}
+          <GatsbyImage
+            image={getImage(gatsbyImageData)}
             alt={description}
             css={styles.embedPhotoClass}
           />
