@@ -14,13 +14,11 @@ const options = {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
         const { gatsbyImageData, description } = node.data.target
-        debugger;
         if (!gatsbyImageData) return null
         return (
             <GatsbyImage
               image={getImage(gatsbyImageData)}
               alt={description}
-              className="gatsby-image-wrapper"
               // css={styles.embedPhotoClass}
             />
         )
