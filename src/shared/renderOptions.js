@@ -20,7 +20,7 @@ const options = {
           <GatsbyImage
             image={getImage(gatsbyImageData)}
             alt={description}
-            css={styles.embedPhotoClass}
+            // css={styles.embedPhotoClass}
           />
         )
       },
