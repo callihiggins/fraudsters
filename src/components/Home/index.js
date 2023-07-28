@@ -52,7 +52,7 @@ const Home = () => {
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
               </nav>
-              <h2 css={styles.subTitleClass}>Fraudsters is an all-you-can-eat podcast buffet of <strong>liars</strong>, <strong>cheaters</strong>, and <strong>scammers</strong>. Hosts <strong>Seena Ghaznavi</strong>, <strong>Justin Williams</strong>, and <strong>Ariel Leaty</strong> cover every flavor of fraud you can imagine from fake psychic hotlines to corporations cookin’ the books.</h2>
+              <h2 css={styles.subTitleClass}>Comedians <strong>Seena Ghaznavi, JD</strong>, <strong>Justin Williams, PhD</strong>, and <strong>Ariel Leaty</strong> bring you the scams you love from the fraudsters we hate. Our show takes a humorous look at fraudsters that abuse trust, distort reality, and take advantage of vulnerable people financially.</h2>
               <div css={styles.playerClass}>
                 <iframe title="Fraudsters Episodes" frameborder="no" scrolling="no" seamless="" src="https://player.simplecast.com/3efcc19a-e279-40af-9726-47a519956c3f?dark=true&amp;show=true&amp;color=000000"></iframe>
               </div>

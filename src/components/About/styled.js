@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 import { default as theme } from '../../theme';
 
 export const pageContainerClass = {
@@ -37,8 +38,8 @@ export const containerClass = {
 export const personClass = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '20px',
-  width: 'calc(33% - 20px)',
+  gap: '15px',
+  width: 'calc(28% - 20px)',
   paddingBottom: '20px',
   "@media only screen and (max-width: 800px)" : {
     width: '100%',
@@ -62,7 +63,7 @@ export const nameClass = {
 
 export const socialMediaIconsClass = {
   display: 'flex',
-  margin: '0 auto',
+  // margin: '0 auto',
 }
 
 export const iconClass = {
