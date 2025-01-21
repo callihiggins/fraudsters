@@ -6,13 +6,11 @@ import * as styles from './styled';
 import InnerHTML from 'dangerously-set-html-content'
 
 const html = `
-<div id='collection-component-1627512936549'></div>
+<div id='collection-component-1737476422479'></div>
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
-
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-
   if (window.ShopifyBuy) {
     if (window.ShopifyBuy.UI) {
       ShopifyBuyInit();
@@ -23,14 +21,6 @@ const html = `
     loadScript();
   }
   function loadScript() {
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'https://use.typekit.net/fqf2qwn.css';
-    link.media = 'all';
-    head.appendChild(link);
-
     var script = document.createElement('script');
     script.async = true;
     script.src = scriptURL;
@@ -40,78 +30,62 @@ const html = `
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
       domain: 'fraudsters-lpn.myshopify.com',
-      storefrontAccessToken: '0358f38b0ac8783ddbe7b1e01ed93279',
+      storefrontAccessToken: '48102698857a946222963306aa44c0af',
     });
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent('collection', {
         id: '263744749760',
-        node: document.getElementById('collection-component-1627512936549'),
+        node: document.getElementById('collection-component-1737476422479'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
+  "product": {
+    "styles": {
       "product": {
-        "styles": {
-          "product": {
-            "background": "#FFFFFF",
-            "padding": "10px",
-            "border": "1px solid #000000",
-            "width": "28%",
-            "max-width": "28%",
-            "margin": "20px !important",
-            "img": {
-              "height": "calc(100% - 15px)",
-              "position": "absolute",
-              "left": "0",
-              "right": "0",
-              "top": "0"
-            },
-            "imgWrapper": {
-              "padding-top": "calc(75% + 15px)",
-              "position": "relative",
-              "height": "0"
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px",
+          "width": "calc(25% - 20px)"
         }
       },
       "title": {
-        "font-family": "Poppins, sans-serif",
-        "font-weight": "normal",
+        "font-family": "Montserrat, sans-serif",
+        "font-size": "20px",
         "color": "#000000"
       },
       "button": {
-        "font-family": "Poppins, sans-serif",
-        "font-size": "16px",
-        "padding-top": "16px",
-        "padding-bottom": "16px",
+        "font-family": "Montserrat, sans-serif",
+        "font-weight": "bold",
+        "font-size": "18px",
+        "padding-top": "17px",
+        "padding-bottom": "17px",
         ":hover": {
-          "background-color": "#000000",
-          "color": "#FFDC04",
+          "background-color": "#02aba3"
         },
-        "background-color": "#000000",
-        "color": "#FFFFFF",
-        "font-weight": "700",
+        "background-color": "#02beb5",
         ":focus": {
-          "background-color": "#000000",
-          "color": "#FFFFFF",
+          "background-color": "#02aba3"
         },
-        "padding-left": "18px",
-        "padding-right": "18px"
+        "border-radius": "40px"
       },
       "quantityInput": {
-        "font-size": "16px",
-        "padding-top": "16px",
-        "padding-bottom": "16px"
+        "font-size": "18px",
+        "padding-top": "17px",
+        "padding-bottom": "17px"
       },
       "price": {
-        "font-family": "Poppins, sans-serif",
-        "font-weight": 700,
+        "font-family": "Montserrat, sans-serif",
+        "font-size": "17px",
         "color": "#000000"
       },
       "compareAt": {
-        "font-family": "Poppins, sans-serif",
-        "font-weight": 700,
+        "font-family": "Montserrat, sans-serif",
+        "font-size": "14.45px",
         "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "Poppins, sans-serif",
-        "font-weight": 700,
+        "font-family": "Montserrat, sans-serif",
+        "font-size": "14.45px",
         "color": "#000000"
       }
     },
@@ -120,32 +94,17 @@ const html = `
       "options": false
     },
     "text": {
-      "button": "Details"
+      "button": "View more"
     },
     "googleFonts": [
-      "Poppins"
+      "Montserrat"
     ]
   },
   "productSet": {
     "styles": {
       "products": {
-        "display": "flex",
-        "flex-wrap": "wrap",
-        "justify-content": "center",
         "@media (min-width: 601px)": {
           "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modal": {
-    "styles": {
-      "close": {
-        "top": "0",
-        "color": "#000000",
-        "outline": "0",
-        ":hover": {
-          "color": "0",
         }
       }
     }
@@ -166,52 +125,55 @@ const html = `
         }
       },
       "button": {
-        "font-family": "Poppins, sans-serif",
-        "font-size": "16px",
-        "padding-top": "16px",
-        "padding-bottom": "16px",
+        "font-family": "Montserrat, sans-serif",
+        "font-weight": "bold",
+        "font-size": "18px",
+        "padding-top": "17px",
+        "padding-bottom": "17px",
         ":hover": {
-          "background-color": "#000000",
-          "color": "#FFDC04"
+          "background-color": "#02aba3"
         },
-        "color": "#FFFFFF",
-        "background-color": "#000000",
+        "background-color": "#02beb5",
         ":focus": {
-          "background-color": "#000000",
-          "color": "#FFDC04"
+          "background-color": "#02aba3"
         },
-        "padding-left": "18px",
-        "padding-right": "18px"
+        "border-radius": "40px"
       },
       "quantityInput": {
-        "font-size": "16px",
-        "padding-top": "16px",
-        "padding-bottom": "16px"
+        "font-size": "18px",
+        "padding-top": "17px",
+        "padding-bottom": "17px"
       },
       "title": {
-        "font-family": "Poppins, sans-serif",
-        "font-weight": "700",
-
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
         "color": "#000000"
       },
       "price": {
-        "font-family": "Poppins, sans-serif",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
         "color": "#000000"
       },
       "compareAt": {
-        "font-family": "Poppins, sans-serif",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
         "color": "#000000"
       },
       "unitPrice": {
-        "font-family": "Poppins, sans-serif",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
         "color": "#000000"
       },
       "description": {
-        "font-family": "Poppins, sans-serif"
-      },
+        "color": "#393939"
+      }
     },
     "googleFonts": [
-      "Poppins"
+      "Montserrat"
     ],
     "text": {
       "button": "Add to cart"
@@ -220,32 +182,26 @@ const html = `
   "option": {
     "styles": {
       "label": {
-        "font-family": "Poppins, sans-serif"
-      },
-      "select": {
-        "font-family": "Poppins, sans-serif"
+        "color": "#000000"
       }
-    },
-    "googleFonts": [
-      "PT Serif"
-    ]
+    }
   },
   "cart": {
     "styles": {
       "button": {
-        "font-family": "Poppins, sans-serif",
-        "font-size": "16px",
-        "padding-top": "16px",
-        "padding-bottom": "16px",
+        "font-family": "Montserrat, sans-serif",
+        "font-weight": "bold",
+        "font-size": "18px",
+        "padding-top": "17px",
+        "padding-bottom": "17px",
         ":hover": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
+          "background-color": "#02aba3"
         },
-        "background-color": "##FFDC04",
+        "background-color": "#02beb5",
         ":focus": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
-        }
+          "background-color": "#02aba3"
+        },
+        "border-radius": "40px"
       },
       "title": {
         "color": "#000000"
@@ -272,8 +228,7 @@ const html = `
         "color": "#000000",
         ":hover": {
           "color": "#000000"
-        },
-        "top": "0",
+        }
       },
       "empty": {
         "color": "#000000"
@@ -292,35 +247,38 @@ const html = `
       }
     },
     "text": {
-      "title": "Your Cart",
+      "title": "Shopping Cart",
       "total": "Subtotal",
-      "button": "Checkout"
+      "empty": "Your cart is empty, add some Fraudstan merch!",
+      "button": "Checkout",
+      "noteDescription": "Leave a note for the Fraudsters team!"
     },
-    "popup": false,
+    "contents": {
+      "note": true
+    },
     "googleFonts": [
-      "PT Serif"
+      "Montserrat"
     ]
   },
   "toggle": {
     "styles": {
       "toggle": {
-        "font-family": "Poppins, sans-serif",
-        "background-color": "#000000",
+        "font-family": "Montserrat, sans-serif",
+        "font-weight": "bold",
+        "background-color": "#02beb5",
         ":hover": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
+          "background-color": "#02aba3"
         },
         ":focus": {
-          "background-color": "#FFFFFF",
-          "color": "#000000"
+          "background-color": "#02aba3"
         }
       },
       "count": {
-        "font-size": "16px"
+        "font-size": "18px"
       }
     },
     "googleFonts": [
-      "PT Serif"
+      "Montserrat"
     ]
   },
   "lineItem": {
