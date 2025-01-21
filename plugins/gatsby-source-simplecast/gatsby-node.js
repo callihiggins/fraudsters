@@ -19,7 +19,7 @@ const nodeWithImage = ['SimplecastPodcastEpisode'];
 
 const PLUGIN_NAME = 'gatsby-source-simplecast';
 const DEFAULTS = {
-  fetchLimit: 99
+  fetchLimit: 1000
 };
 
 exports.sourceNodes = async ({
